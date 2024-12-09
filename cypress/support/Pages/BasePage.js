@@ -2,7 +2,7 @@
 
 import { Assertion } from "chai";
 
-class BasePage {
+class basePage {
     navigate(path){
       cy.fixture("cypress.json").then((data) => {
         cy.visit(data.baseUrl + path)

@@ -21,7 +21,7 @@ class HomePage extends BasePage{
 
     clickOnLoginButton(){
         cy.clickAndOpen_InSameTab("#login2");
-        cy.get(".btn.btn-secondary").click();
+        cy.get(".btn.btn-secondary").click()
     }
 
     clickOnSignUpButton(){
