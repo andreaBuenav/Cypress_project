@@ -6,7 +6,7 @@ const basePage = new BasePage();
 
 
 Given(`I visit the homepage`, () =>{
-    basePage.navigate
+    basePage.navigate("index.html#");
 })
 
 When(`I click the contact button`, ()=>{

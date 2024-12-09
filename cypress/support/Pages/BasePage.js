@@ -13,6 +13,10 @@ class BasePage {
         cy.wait(3 * 1000);
     }
 
+    getResponse(){
+        cy.wait(3*1000).getResponse();
+      }
+
  
     
 }
