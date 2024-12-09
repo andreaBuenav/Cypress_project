@@ -8,14 +8,9 @@ class BasePage {
         cy.visit(data.baseUrl + path)
       })
     }
-    //wait methods
-    waitSomeSeconds() {
-        cy.wait(3 * 1000);
-    }
-
-    getResponse(){
-        cy.wait(3*1000).getResponse();
-      }
+   getPageTitle(){
+    return cy.title();
+   }
 
  
     

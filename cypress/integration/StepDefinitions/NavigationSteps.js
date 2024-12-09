@@ -1,12 +1,11 @@
 /// <reference types="cypress" />
 import {Given, When, Then} from "cypress-cucumber-preprocessor/steps"
-import BasePage from "../../support/Pages/BasePage"
+import HomePage from "../../support/Pages/HomePage"
 
-const basePage = new BasePage();
-
-
+const homepage = new HomePage();
 Given(`I visit the homepage`, () =>{
-    basePage.navigate("index.html#");
+basePage.navigate("");
+
 })
 
 When(`I click the contact button`, ()=>{
