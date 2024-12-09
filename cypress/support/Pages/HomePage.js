@@ -1,17 +1,14 @@
-const { default: BasePage } = require("./BasePage");
-
 //Elements of the homepage
 const Contact = 'li.nav-item a.nav-link:contains("Contact")'
 const AboutUs = 'li.nav-item:contains("About us")'
 const Cart = '#cartur'
 const Login = '#login2'
 const SignUp = '#signin2'
-const Close = '.btn.btn-secondary'
 
-class HomePage extends BasePage{
+class HomePage{
    
     navigateToHomePage(){
-        cy.visit("/");
+        cy.visit(Cypress.config().baseUrl)
     }
 
     //Obtains the response code
