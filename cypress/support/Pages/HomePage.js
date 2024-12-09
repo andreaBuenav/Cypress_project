@@ -25,7 +25,7 @@ class HomePage extends BasePage{
     }
 
     clickOnAboutUsButton(){
-        cy.clickAndOpen_InSameTab();
+        cy.clickAndOpen_InSameTab(AboutUs);
     }
 
     clickOnCarButton(){
@@ -34,12 +34,15 @@ class HomePage extends BasePage{
 
     clickOnLoginButton(){
         cy.clickAndOpen_InSameTab(Login);
-        cy.get(Close).click();
     }
 
     clickOnSignUpButton(){
         cy.clickAndOpen_InSameTab(SignUp);
-        cy.clickAndOpen_InSameTab(Close);
+    }
+
+    //Get title
+    getTitle(expectedTitle){
+        cy.title().should('eq', expectedTitle); 
     }
 
 }

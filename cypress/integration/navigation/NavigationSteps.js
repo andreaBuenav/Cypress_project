@@ -5,15 +5,16 @@ import HomePage from "../../support/Pages/HomePage";
 const homepage = new HomePage();
 
 Given('I visit the homepage', () => {
-    homepage.navigateToHomePage();
+   homepage.navigateToHomePage();
+   homepage.response(200)
 });
 
 When('I click the login button', () => {
     homepage.clickOnLoginButton();
 });
 
-And('the title should be {string}', (expectedTitle) => {
-    cy.title().should('eq', expectedTitle); 
+When('the title is {string}', (expectedTitle) => {
+  homepage.getTitle({string});
 });
 
 And('I click the close button', () => {
@@ -23,3 +24,7 @@ And('I click the close button', () => {
 Then('I should see the homepage', () => {
     cy.get('#carouselExampleIndicators').should('be.visible');
 });
+
+And('The response code should be of {int}',()=>{
+    homepage.response({int})
+})
