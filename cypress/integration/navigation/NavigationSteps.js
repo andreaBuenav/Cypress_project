@@ -17,7 +17,7 @@ When('the title is Log in',()=> {
 });
 
 And('I click the close button', () => {
-    homepage.closeModal(); 
+    homepage.clickOnCLoseButton();
 });
 
 Then('I should see the homepage', () => {

@@ -4,6 +4,7 @@ const AboutUs = 'li.nav-item:contains("About us")'
 const Cart = '#cartur'
 const Login = '#login2'
 const SignUp = '#signin2'
+const Close = '.btn.btn-secondary'
 
 class HomePage{
    
@@ -35,6 +36,9 @@ class HomePage{
 
     clickOnSignUpButton(){
         cy.clickAndOpen_InSameTab(SignUp);
+    }
+    clickOnCLoseButton(){
+        cy.clickAndOpen_InSameTab(Close);
     }
 
     //Get title
