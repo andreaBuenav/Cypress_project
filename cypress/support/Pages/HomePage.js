@@ -4,7 +4,7 @@ const AboutUs = 'li.nav-item:contains("About us")'
 const Cart = '#cartur'
 const Login = '#login2'
 const SignUp = '#signin2'
-const Close = '#logInModal > div > div > div.modal-footer > button.btn.btn-secondary'
+const Close = '/html/body/div[3]/div/div/div[3]/button[1]'
 
 class HomePage{
    
@@ -38,7 +38,7 @@ class HomePage{
         cy.clickAndOpen_InSameTab(SignUp);
     }
     clickOnCLoseButton(){
-        cy.get('#exampleModal').should('be.visible').wait(3000);
+        cy.get('#exampleModal').should('be.visible').wait(5000);
     
         cy.get(Close).should('be.visible').click();    }
 
