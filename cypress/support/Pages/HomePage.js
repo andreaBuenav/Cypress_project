@@ -38,8 +38,8 @@ class HomePage{
         cy.clickAndOpen_InSameTab(SignUp);
     }
     clickOnCLoseButton(){
-        cy.get(Close).first().should('be.visible').click();
-    }
+        cy.get('#exampleModal').should('be.visible').wait(1000); 
+        cy.get(Close).first().should('be.visible').click();    }
 
     //Get title
     getTitle(expectedTitle){
