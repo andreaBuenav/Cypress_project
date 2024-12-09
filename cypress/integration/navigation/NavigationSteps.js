@@ -12,8 +12,8 @@ When('I click the login button', () => {
     homepage.clickOnLoginButton();
 });
 
-When('the title is {string}', (expectedTitle) => {
-  homepage.getTitle(expectedTitle);
+When('the title is Log in',()=> {
+  cy.get("#logInModalLabel").should('be.visible');
 });
 
 And('I click the close button', () => {
