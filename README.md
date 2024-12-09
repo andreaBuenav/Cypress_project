@@ -13,4 +13,4 @@ When you have found the project directory, then use the next command to excecute
 for any questions or suggestions pleasse contact to this mail:<br/>
 [Mail](andrea.buenaventura@globant.com)<br/>
 ### Clone
-`git clone` 
+`git clone https://github.com/andreaBuenav/Cypress_project.git` 
