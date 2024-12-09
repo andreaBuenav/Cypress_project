@@ -12,6 +12,10 @@ When('I click the login button', () => {
     homepage.clickOnLoginButton();
 });
 
+When('I click the contact button', ()=>{
+    homepage.clickOnContactButton();
+})
+
 When('the title is Log in',()=> {
   cy.get("#logInModalLabel").should('be.visible');
 });
