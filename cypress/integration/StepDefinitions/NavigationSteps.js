@@ -1,14 +1,25 @@
 /// <reference types="cypress" />
-import {Given, When, Then} from "cypress-cucumber-preprocessor/steps"
-import HomePage from "../../support/pages/HomePage"
+import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
+import HomePage from "../../support/Pages/HomePage";
 
 const homepage = new HomePage();
-Given(`I visit the homepage`, () =>{
-basePage.navigate("");
 
-})
+Given('I visit the homepage', () => {
+    homepage.navigateToHomePage();
+});
 
-When(`I click the contact button`, ()=>{
-    cy.clickAndOpen_InSameTab('li.nav-item a.nav-link:contains("Contact")');
-})
+When('I click the login button', () => {
+    homepage.clickOnLoginButton();
+});
 
+And('the title should be {string}', (expectedTitle) => {
+    cy.title().should('eq', expectedTitle); 
+});
+
+And('I click the close button', () => {
+    homepage.closeModal(); 
+});
+
+Then('I should see the homepage', () => {
+    cy.get('#carouselExampleIndicators').should('be.visible');
+});
