@@ -38,7 +38,7 @@ class HomePage{
         cy.clickAndOpen_InSameTab(SignUp);
     }
     clickOnCLoseButton(){
-        cy.clickAndOpen_InSameTab(Close);
+        cy.get(Close).first().click();
     }
 
     //Get title
