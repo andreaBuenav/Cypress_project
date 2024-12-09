@@ -4,6 +4,7 @@ const AboutUs = 'li.nav-item:contains("About us")'
 const Cart = '#cartur'
 const Login = '#login2'
 const SignUp = '#signin2'
+const Close = ' .modal span[aria-hidden="true"]'
 
 class HomePage{
    
@@ -37,8 +38,8 @@ class HomePage{
         cy.clickAndOpen_InSameTab(SignUp);
     }
     clickOnCLoseButton(){
-        cy.get('#exampleModal').should('have.css', 'display', 'block');     
-        cy.get('.btn-secondary').click();
+        cy.gett(Close).click();
+       
 }
 //Get title
 getTitle(expectedTitle){
