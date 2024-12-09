@@ -6,7 +6,6 @@ const homepage = new HomePage();
 
 Given('I visit the homepage', () => {
    homepage.navigateToHomePage();
-   homepage.response(200)
 });
 
 When('I click the login button', () => {
