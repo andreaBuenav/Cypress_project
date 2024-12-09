@@ -39,10 +39,11 @@ class HomePage{
     clickOnCLoseButton(){
         cy.get('#exampleModal').should('have.css', 'display', 'block');     
         cy.get('.btn-secondary').click();
-    //Get title
-    getTitle(expectedTitle){
-        cy.title().should('eq', expectedTitle); 
-    }
+}
+//Get title
+getTitle(expectedTitle){
+    cy.title().should('eq', expectedTitle); 
+}
 
 }
 export default HomePage;
