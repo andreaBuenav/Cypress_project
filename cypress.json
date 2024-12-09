@@ -1,4 +1,7 @@
 {
     "baseUrl": "https://www.demoblaze.com/",
-    "testFiles": "**/*.feature"
+    "testFiles": "**/*.feature",
+    "env": {
+    "tags": "@smoke, @regression"
+  }
 }

@@ -18,5 +18,4 @@ Before({tags : "@regression"},()=>{
 
 After(()=>{
     cy.log("**Scenario finished**");
-    cy.end
 })

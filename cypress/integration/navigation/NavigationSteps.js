@@ -14,7 +14,7 @@ When('I click the login button', () => {
 });
 
 When('the title is {string}', (expectedTitle) => {
-  homepage.getTitle({string});
+  homepage.getTitle(expectedTitle);
 });
 
 And('I click the close button', () => {
@@ -25,6 +25,6 @@ Then('I should see the homepage', () => {
     cy.get('#carouselExampleIndicators').should('be.visible');
 });
 
-And('The response code should be of {int}',()=>{
-    homepage.response({int})
+And('The response code should be of {int}',(expectedStatusCode)=>{
+    homepage.response(expectedStatusCode)
 })
