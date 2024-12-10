@@ -50,6 +50,7 @@ class HomePage {
     cy.get(Closelogin).should('be.visible').wait(5000).click();
   }
   clickOnCloseButtonContact(){
+    cy.get(ExModal).should('be.visible')
     cy.get(CloseContact).should('be.visible').wait(5000).click();
   }
 
