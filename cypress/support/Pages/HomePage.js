@@ -101,14 +101,22 @@ class HomePage {
   clickOnNext() {
     cy.get(Next).clickAndOpen_InSameTab();
     cy.wait(1000);
-    cy.get(`#carouselExampleIndicators .carousel-item.active`)
-    .should('not.exist'); 
   }
 
   clickOnBack() {
     cy.get(Back).clickAndOpen_InSameTab();
+  }
+
+
+  slideNextAndBack(){
+    this.clickOnNext();
+    cy.get(`#carouselExampleIndicators .carousel-item.active`)
+    .should('not.exist'); 
+    cy.wait(10000)
+    this.clickOnBack();
     cy.get(`#carouselExampleIndicators .carousel-item.active`)
     .should('exist');
+
   }
 
   slideToImage(imageSrc) {
