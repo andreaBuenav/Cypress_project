@@ -167,14 +167,14 @@ verifyResponsePhones(){
 
 verifyResponseLaptops(){
   cy.wait(1000);
-  cy.get('a.hrefch').filter(':visible').then(($links) => {
+  cy.get('a.hrefch').then(($links) => {
     expect($links).to.have.lengthOf(15);
     const productIds = [];
     $links.each((_, link) => {
-      const productId = link.href.split('=')[1];
+      const productId = link.href.split('=')[8];
       productIds.push(productId);
     });
-    expect(productIds.sort()).to.deep.equal(['8', '9', '10', '11', '12', '13', '14', '15']);
+    expect(productIds.sort()).to.deep.equal(['8', '9', '10', '11', '12', '13', '14','15']);
     cy.get('a.hrefch').should('have.length', 8);
   });
 }
