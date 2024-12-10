@@ -46,4 +46,21 @@ Then('I should only see monitors', ()=>{
     homepage.verifyResponseMonitors();
 
 })
+Then(' A PopUp message should be shown',()=>{
+    itemPage.getPopUp();
+})
+
+
+//And
+
+And('I select one phone',()=>{
+    homepage.selectRandomPhone();
+})
+And('I add the phone to the cart',()=>{
+    itemPage.addToCart();
+})
+
+And('The response code should be 200', ()=>{
+    itemPage.cartResponse();
+})
 

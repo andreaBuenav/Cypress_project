@@ -202,7 +202,7 @@ verifyResponseMonitors(){
 
 
 
-SelectRandomPhone(){
+selectRandomPhone(){
   cy.get('a.hrefch').then(($links) => {
     const randomIndex = Math.floor(Math.random() * $links.length); 
     const selectedLink = $links[randomIndex];
