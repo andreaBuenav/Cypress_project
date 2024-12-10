@@ -24,7 +24,7 @@ When("I click the close button for login", () => {
   });
 
   When('I click the close button for contact',()=>{
-    homepage.clickOnCLoseButtonLogin();
+    homepage.clickOnCloseButtonContact();
   })
 
 
@@ -33,7 +33,7 @@ When("I click the close button for login", () => {
 And('the title is Log in', () => {
     cy.get("#logInModalLabel").should("be.visible");
   });
-  
+
 And('the title is New message',()=>{
     cy.get('#exampleModalLabel').should('be.visible');
 })
