@@ -10,7 +10,7 @@ const SignUp = "#signin2";
 const CartPage = new ShoppingCartPage();
 
 //Carousel
-const Next = "span.carousel-control-next-icon";
+const Next = "#carouselExampleIndicators .carousel-control-next";
 const Back = "span.carousel-control-prev-icon";
 const Carousel = "#carouselExampleIndicators";
 
@@ -106,18 +106,24 @@ class HomePage {
     cy.get(Back).clickAndOpen_InSameTab();
   }
 
-  slideToImage(image) {
+  slideToImage(imageSrc) {
     let maxSlides = 2;  
-    for (let i = 0; i < maxSlides; i++) {
-      cy.get(`#carouselExampleIndicators .carousel-inner .carousel-item img[src="${image}"]`).then((img) => {
-        if (img.length > 0) {
-          cy.wrap(img).should('be.visible');
-          return; 
+    let foundImage = false;
+    for (let i = 0; i < maxSlides && !foundImage; i++) {
+      cy.get(`#carouselExampleIndicators .carousel-inner .carousel-item img[src="${imageSrc}"]`).then((img) => {
+        if (img.length > 0 && img.is(':visible')) {
+          cy.wrap(img).should('be.visible');  
+          foundImage = true;  
         } else {
           cy.get(Next).click();
-          cy.wait(1000); 
+          cy.wait(1000);  // Espera un segundo entre cada clic
         }
       });
+    }
+
+
+    if (!foundImage) {
+      throw new Error(`Imagen ${imageSrc} not found ${maxSlides} times tried.`);
     }
   }
 }
