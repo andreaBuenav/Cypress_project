@@ -27,8 +27,7 @@ Given("I visit the homepage", () => {
     homepage.response(expectedStatusCode);
   });
 
-  //And
-  And('I go back', ()=>{
+  Then('I go back', ()=>{
     homepage.clickOnBack();
   })
   
