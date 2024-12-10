@@ -41,12 +41,13 @@ class HomePage{
         buttons.forEach(Close => {
             if (button.textContent.trim() === 'Close') {
               button.click();
-            }       
+            }
+        }
+        }       
 
 //Get title
 getTitle(expectedTitle){
     cy.title().should('eq', expectedTitle); 
 }
-
 }
 export default HomePage;
