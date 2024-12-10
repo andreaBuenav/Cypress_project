@@ -26,15 +26,15 @@ Feature: Manage Purchase Steps
         And I select one phone
         Then When I click on Phones
         And I select one phone
-
-        Scenario: finish purchase of a random phone
+    @smoke
+    Scenario: finish purchase of a random phone
         Given I am in the cart page
-        When I click on place order 
+        When I click on place order
         And I fill the credentials
         Then The sucess message should be present
 
-        @smoke
-        Scenario: Add a random phone to cart, and the delte it
+    @smoke
+    Scenario: Add a random phone to cart, and the delte it
         Given I visit the homepage
         When I click on Phones
         And I select one phone
