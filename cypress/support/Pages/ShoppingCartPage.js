@@ -39,13 +39,7 @@ class ShoppingCartPage {
 
   deleteAllItems() {
     wait(1000)
-    cy.get('a[onclick^="deleteItem"]').then(($links) => {
-      if ($links.length > 0) {
-        cy.wrap($links[0]).click();
-        cy.wait(1000);
-        this.deleteAllItems();
-      }
-    });
+   cy.get(Delete).click();
   }
 
   purchaseOrder() {
