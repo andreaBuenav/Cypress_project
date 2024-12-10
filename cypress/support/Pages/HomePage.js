@@ -109,6 +109,8 @@ class HomePage {
 
 
   slideNextAndBack(){
+    cy.get("body").should("be.visible");
+    cy.get(Carousel).should("be.visible");
     this.clickOnNext();
     cy.get(`#carouselExampleIndicators .carousel-item.active`)
     .should('not.exist'); 
