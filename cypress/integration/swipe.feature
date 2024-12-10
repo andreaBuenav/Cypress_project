@@ -16,5 +16,7 @@ Feature: Manage Swipe Steps
 
     @smoke
     Scenario: click on next and then click on Back
-    When I slide next and go back
+    When I slide until I see the image "Samsung1.jpg" 
+    Then I should see the image "Samsung1.jpg"
+    And I go Back
     Then The response code should be 200

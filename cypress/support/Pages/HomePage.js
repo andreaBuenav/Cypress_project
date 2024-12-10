@@ -108,16 +108,6 @@ class HomePage {
   }
 
 
-  slideNextAndBack(){
-    cy.get("body").should("be.visible"); 
-    cy.get(Carousel).should("be.visible"); 
-    cy.get(Next).click();
-    cy.wait(1000); 
-    cy.get(Back).click();
-        cy.wait(1000)
-
-  }
-
   slideToImage(imageSrc) {
     cy.get("body").should("be.visible");
     cy.get(Carousel).should("be.visible");
