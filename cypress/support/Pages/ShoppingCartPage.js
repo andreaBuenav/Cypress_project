@@ -1,5 +1,4 @@
 //faker
-import { faker } from '@faker-js/faker';
 const { faker } = require('@faker-js/faker');
 
 //Elements of the page
@@ -53,6 +52,10 @@ class ShoppingCartPage{
         cy.get(PurchaseOrder).click();
         cy.get(Ok).should('be.visible').wait(2000).click();
 
+      }
+
+      getCartTitle(){
+        cy.get(Title).should('be.visible');
       }
 
 }

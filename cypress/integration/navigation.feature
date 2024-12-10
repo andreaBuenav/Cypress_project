@@ -35,8 +35,8 @@ Feature: Manage Navigation Steps
         @smoke
         Scenario: Navigate to Cart
         When I click on the Cart button
-        And the button Place Order is present
         And the response code should be 200
+        And the title is Products
         When I click on the Home button
         Then I should see the homepage
         And the response code should be of 200
