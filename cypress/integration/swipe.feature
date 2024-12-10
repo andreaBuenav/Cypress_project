@@ -20,4 +20,4 @@ Feature: Manage Swipe Steps
         When I slide until I see the image "Samsung1.jpg"
         Then I should see the image "Samsung1.jpg"
         And I go Back
-        Then The response code should be 200
+        And The response code should be 200
