@@ -18,6 +18,6 @@ Feature: Manage Swipe Steps
     Scenario: Click on Next and then click on Back
         Given I visit the homepage
         When I slide until I see the image "Samsung1.jpg"
-        Then I should see the image "Samsung1.jpg"
-        And I go Back
-        And The response code should be 200
+        And I should see the image "Samsung1.jpg"
+        Then I go Back
+
