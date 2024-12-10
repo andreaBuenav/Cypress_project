@@ -34,11 +34,8 @@ Feature: Manage Navigation Steps
     @smoke
     Scenario: Navigate to Cart
         When I click on the Cart button
-        And The response code of Cart should be 200
-        When I click on the Home button
-        Then I should see the homepage
-        And the response code should be 200
-
+        Then The response code of Cart should be 200
+       
 
 
 

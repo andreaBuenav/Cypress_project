@@ -74,7 +74,7 @@ Then('I should see the homepage', () => {
   cy.get("#carouselExampleIndicators").should("be.visible");
 });
 
-And('The response code of Cart should be {int}', (expectedStatusCode)=>{
+Then('The response code of Cart should be {int}', (expectedStatusCode)=>{
   cartPage.response(expectedStatusCode);
 
 })
