@@ -43,6 +43,7 @@ When('I click the close sign up button',()=>{
 })
 
 When('I click on the Cart button', ()=>{
+  cy.intercept('GET', '/cart.html').as('getCart');
   homepage.clickOnCarButton();
 })
 When('I click on the Home button',()=>{
