@@ -151,12 +151,17 @@ clickOnMonitors(){
 }
 
 verifyResponse(){
-        for (let i = 1; i <= 7; i++) {
-            cy.get(`.product:nth-child(${i})`) 
-              .should('be.visible');
-        }
-        cy.get('.product:nth-child(n+8)')
-          .should('not.be.visible');
+  cy.get('a.hrefch').then(($links) => {
+    expect($links).to.have.lengthOf(7);
+    const productIds = [];
+    $links.each((_, link) => {
+      const productId = link.href.split('=')[1];
+      productIds.push(productId);
+    });
+    expect(productIds.sort()).to.deep.equal(['1', '2', '3', '4', '5', '6', '7']);
+    cy.get('a.hrefch').should('have.length', 7);
+  });
+        
 }
 
 
