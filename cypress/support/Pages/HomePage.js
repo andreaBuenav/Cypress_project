@@ -107,6 +107,7 @@ class HomePage {
   }
 
   slideToImage(imageSrc) {
+    cy.wait(2000);
     let maxSlides = 2;  
     let foundImage = false;
     for (let i = 0; i < maxSlides && !foundImage; i++) {
@@ -116,7 +117,7 @@ class HomePage {
           foundImage = true;  
         } else {
           cy.get(Next).click();
-          cy.wait(1000);  // Espera un segundo entre cada clic
+          cy.wait(1000);  
         }
       });
     }
