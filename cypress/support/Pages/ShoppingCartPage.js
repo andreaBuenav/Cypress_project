@@ -25,11 +25,7 @@ const credit = faker.number.bigInt({ min: 1000000000, max: 9999999999 });
 const month = faker.date.month();
 const year = 2024;
 
-
-
-
-
-class ShoppingPage{
+class ShoppingCartPage{
     navigateToCartPage(){
         cy.visit(Cypress.config().baseUrl("/cart.html"));
     }
@@ -59,7 +55,5 @@ class ShoppingPage{
 
       }
 
-
-
-
 }
+export default ShoppingCartPage;

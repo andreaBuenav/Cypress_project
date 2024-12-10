@@ -1,3 +1,5 @@
+import ShoppingCartPage from "./ShoppingCartPage";
+
 //Elements of the homepage
 const Home = 'li.nav-item a.nav-link:contains("Home")';
 const Contact = 'li.nav-item a.nav-link:contains("Contact")';
@@ -23,6 +25,8 @@ const CloseAboutUS ='#videoModal button.btn.btn-secondary'
 const Closelogin = '#logInModal button.btn-secondary';
 const CloseContact = '#exampleModal button.btn.btn-secondary'
 const CloseSignUp = '#signInModal button.btn.btn-secondary'
+
+
 
 class HomePage {
   navigateToHomePage() {
@@ -67,6 +71,7 @@ class HomePage {
   clickOnCarButton(){
     cy.get(Cart).click();
     return new ShoppingCartPage();
+   
   }
   
   clickOnHomeButton(){
