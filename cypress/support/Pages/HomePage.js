@@ -10,24 +10,19 @@ const SignUp = "#signin2";
 const CartPage = new ShoppingCartPage();
 
 //Carousel
-const Next = 'span.carousel-control-next-icon'
-const Back = 'span.carousel-control-prev-icon'
-const Carousel = '#carouselExampleIndicators'
-const Nexusimg = 'nexus1.jpg'
-const Laptopimg = 'iphone1.jpg'
-const Cellphoneimg ='Samsung1.jpg'
+const Next = "span.carousel-control-next-icon";
+const Back = "span.carousel-control-prev-icon";
+const Carousel = "#carouselExampleIndicators";
 
-//PopUp pages 
-const Modal = '#logInModal'
-const ExModal = '#exampleModal'
-const videoModal = '#videoModal'
-const SignUpModal = '#signInModal'
-const CloseAboutUS ='#videoModal button.btn.btn-secondary'
-const Closelogin = '#logInModal button.btn-secondary';
-const CloseContact = '#exampleModal button.btn.btn-secondary'
-const CloseSignUp = '#signInModal button.btn.btn-secondary'
-
-
+//PopUp pages
+const Modal = "#logInModal";
+const ExModal = "#exampleModal";
+const videoModal = "#videoModal";
+const SignUpModal = "#signInModal";
+const CloseAboutUS = "#videoModal button.btn.btn-secondary";
+const Closelogin = "#logInModal button.btn-secondary";
+const CloseContact = "#exampleModal button.btn.btn-secondary";
+const CloseSignUp = "#signInModal button.btn.btn-secondary";
 
 class HomePage {
   navigateToHomePage() {
@@ -46,13 +41,12 @@ class HomePage {
   //Click each button
   clickOnContactButton() {
     cy.clickAndOpen_InSameTab(Contact);
-    cy.get(ExModal).should('be.visible');
-
+    cy.get(ExModal).should("be.visible");
   }
 
   clickOnAboutUsButton() {
     cy.clickAndOpen_InSameTab(AboutUs);
-    cy.get(videoModal).should('be.visible');
+    cy.get(videoModal).should("be.visible");
   }
 
   clickOnCarButton() {
@@ -61,43 +55,41 @@ class HomePage {
 
   clickOnLoginButton() {
     cy.clickAndOpen_InSameTab(Login);
-    cy.get(Modal).should('be.visible');
+    cy.get(Modal).should("be.visible");
   }
 
   clickOnSignUpButton() {
     cy.clickAndOpen_InSameTab(SignUp);
-    cy.get(SignUpModal).should('be.visible');
+    cy.get(SignUpModal).should("be.visible");
   }
 
-  clickOnCarButton(){
+  clickOnCarButton() {
     cy.intercept("GET", "/cart.html").as("responseCheck");
     cy.get(Cart).click();
-    cy.wait("@responseCheck")
-    .its("response.statusCode")
-    .should("eq", 200); 
+    cy.wait("@responseCheck").its("response.statusCode").should("eq", 200);
   }
-  
-  clickOnHomeButton(){
+
+  clickOnHomeButton() {
     cy.get(Home).click();
   }
 
   //Closing buttons
- 
-  clickOnCloseButtonContact(){
-    cy.get(ExModal).should('be.visible')
-    cy.get(CloseContact).should('be.visible').wait(1000).click();
+
+  clickOnCloseButtonContact() {
+    cy.get(ExModal).should("be.visible");
+    cy.get(CloseContact).should("be.visible").wait(1000).click();
   }
 
-  clickOncloseButtonAboutUs(){
-    cy.get(CloseAboutUS).should('be.visible').wait(1000).click();
+  clickOncloseButtonAboutUs() {
+    cy.get(CloseAboutUS).should("be.visible").wait(1000).click();
   }
 
   clickOnCLoseButtonLogin() {
-    cy.get(Closelogin).should('be.visible').wait(1000).click();
+    cy.get(Closelogin).should("be.visible").wait(1000).click();
   }
 
-  clickOnCloseSignUp(){
-    cy.get(CloseSignUp).should('be.visible').wait(1000).click();
+  clickOnCloseSignUp() {
+    cy.get(CloseSignUp).should("be.visible").wait(1000).click();
   }
 
   //Get title
@@ -105,12 +97,28 @@ class HomePage {
     cy.title().should("eq", expectedTitle);
   }
 
+  //Carousel methods
+  clickOnNext() {
+    cy.get(Next).clickAndOpen_InSameTab();
+  }
 
-//Carousel methods
-clickOnNext(){
-  cy.get(Next).clickAndOpen_InSameTab();
-}
+  clickOnBack() {
+    cy.get(Back).clickAndOpen_InSameTab();
+  }
 
-
+  slideToImage(image) {
+    let maxSlides = 2;  
+    for (let i = 0; i < maxSlides; i++) {
+      cy.get(`#carouselExampleIndicators .carousel-inner .carousel-item img[src="${image}"]`).then((img) => {
+        if (img.length > 0) {
+          cy.wrap(img).should('be.visible');
+          return; 
+        } else {
+          cy.get(Next).click();
+          cy.wait(1000); 
+        }
+      });
+    }
+  }
 }
 export default HomePage;

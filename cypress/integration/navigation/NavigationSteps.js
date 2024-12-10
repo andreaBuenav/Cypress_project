@@ -1,10 +1,8 @@
 /// <reference types="cypress" />
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
 import HomePage from "../../support/Pages/HomePage";
-import ShoppingCartPage from "../../support/Pages/ShoppingCartPage";
 
 const homepage = new HomePage();
-const cartPage = new ShoppingCartPage();
 //Given
 Given("I visit the homepage", () => {
   homepage.navigateToHomePage();
