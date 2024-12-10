@@ -210,7 +210,6 @@ selectRandomPhone(){
     cy.wrap(selectedLink).click();   
     cy.url().should('include', `prod.html?idp_=${productId}`);
 });
-
 }
 
 

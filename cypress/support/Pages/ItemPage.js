@@ -18,7 +18,6 @@ class ItemPage {
     }
 
     cartResponse(expectedStatusCode){
-        const expectedUrl = `https://www.demoblaze.com/prod.html?idp_=${itemId}#`;
         cy.intercept("GET", expectedUrl).as("responseCheck");
         cy.get(`a[href="prod.html?idp_=${itemId}"]`)
         cy.wait("@responseCheck")
