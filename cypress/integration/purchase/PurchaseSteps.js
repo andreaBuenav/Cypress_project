@@ -17,12 +17,12 @@ import ItemPage from "../../support/Pages/ItemPage.js";
 
   When('I click on Phones',()=>{
   homepage.clickOnphones();
-  cy.wait(1000);
+  cy.wait(2000);
   })
 
   When('I click on Laptops',()=>{
     homepage.clickOnLaptops();
-    cy.wait(1000);
+    cy.wait(2000);
     }) 
     
     When('I click on Monitors',()=>{

@@ -151,7 +151,7 @@ clickOnMonitors(){
 }
 
 verifyResponsePhones(){
-  cy.wait(1000);
+  cy.wait(2000);
   cy.get('a.hrefch').then(($links) => {
     expect($links).to.have.lengthOf(7);
     const productIds = [];
@@ -166,7 +166,7 @@ verifyResponsePhones(){
 }
 
 verifyResponseLaptops(){
-  cy.wait(1000);
+  cy.wait(2000);
   cy.get('a.hrefch').then(($links) => {
     expect($links).to.have.lengthOf(8);
     const productIds = [];
