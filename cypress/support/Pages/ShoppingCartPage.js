@@ -38,7 +38,7 @@ class ShoppingCartPage {
   }
 
   deleteAllItems() {
-    wait(1000)
+    cy.wait(1000)
    cy.get(Delete).click();
   }
 
