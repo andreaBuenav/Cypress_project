@@ -107,16 +107,17 @@ class HomePage {
   }
 
   slideToImage(imageSrc) {
-    let maxSlides = 2;  
+    let maxSlides = 3; 
     let foundImage = false;
+
     for (let i = 0; i < maxSlides && !foundImage; i++) {
       cy.get(`#carouselExampleIndicators .carousel-inner .carousel-item img[src="${imageSrc}"]`).then((img) => {
         if (img.length > 0 && img.is(':visible')) {
-                    cy.wrap(img).should('be.visible');  
+                 cy.wrap(img).should('be.visible');  
           foundImage = true;  
         } else {
-          cy.get(Next).click();
-          cy.wait(1000);  
+          cy.get('#carouselExampleIndicators .carousel-control-next').click();
+          cy.wait(1000);  // Espera un segundo entre cada clic
         }
       });
     }
