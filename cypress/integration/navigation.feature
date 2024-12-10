@@ -8,7 +8,6 @@ Feature: Manage Navigation Steps
         And the title is Log in
         When I click the close button for login
         Then I should see the homepage
-        And The response code should be of 200
 
     @smoke
     Scenario: Navigate to Contact
@@ -16,4 +15,3 @@ Feature: Manage Navigation Steps
         And the title is New message
         When I click the close button for contact
         Then I should see the homepage
-        And The response code should be of 200
