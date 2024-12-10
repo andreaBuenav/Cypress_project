@@ -167,7 +167,7 @@ verifyResponsePhones(){
 
 verifyResponseLaptops(){
   cy.wait(1000);
-  cy.get('a.hrefch').then(($links) => {
+  cy.get('a.hrefch').filter(':visible').then(($links) => {
     expect($links).to.have.lengthOf(8);
     const productIds = [];
     $links.each((_, link) => {
