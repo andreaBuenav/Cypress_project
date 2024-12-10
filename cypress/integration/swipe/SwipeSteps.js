@@ -24,6 +24,7 @@ Given("I visit the homepage", () => {
 
 
   Then('I go back', () => {
+    cy.wait(500);
     homepage.clickOnBack();
 });
 

@@ -15,7 +15,8 @@ Feature: Manage Swipe Steps
         Then I should see the image "nexus1.jpg"
 
     @smoke
-    Scenario: click on next and then click on Back
+    Scenario: Click on Next and then click on Back
+        Given I visit the homepage
         When I slide until I see the image "Samsung1.jpg"
         Then I should see the image "Samsung1.jpg"
         And I go Back
