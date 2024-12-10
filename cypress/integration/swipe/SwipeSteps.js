@@ -10,7 +10,6 @@ Given("I visit the homepage", () => {
   //When
 
   When("I slide until I see the image {string}", (imageName) => {
-    cy.wait(30000);
     homepage.slideToImage(imageName);
   });
 
