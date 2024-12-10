@@ -111,7 +111,7 @@ class HomePage {
     let maxSlides = 2;
     let foundImage = false;
     for (let i = 0; i < maxSlides && !foundImage; i++) {
-      cy.get("#carouselExampleIndicators").then(() => {
+      cy.get(Carousel).then(() => {
         cy.get(
           `#carouselExampleIndicators .carousel-inner .carousel-item img[src="${imageSrc}"]`
         ).then((img) => {
@@ -119,7 +119,7 @@ class HomePage {
             cy.wrap(img).should("be.visible");
             foundImage = true;
           } else {
-            cy.get("#carouselExampleIndicators .carousel-control-next").click();
+            cy.get(Next).click();
             cy.wait(1500);
           }
         });
