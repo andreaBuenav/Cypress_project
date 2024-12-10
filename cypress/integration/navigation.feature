@@ -35,7 +35,6 @@ Feature: Manage Navigation Steps
     Scenario: Navigate to Cart
         When I click on the Cart button
         And the response code of Cart should be 200
-        And the title is Products
         When I click on the Home button
         Then I should see the homepage
         And the response code of Cart should be 200

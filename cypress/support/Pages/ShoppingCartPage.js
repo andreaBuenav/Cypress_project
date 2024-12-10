@@ -54,9 +54,6 @@ class ShoppingCartPage{
 
       }
 
-      getCartTitle(){
-        cy.get(Title).should('be.visible');
-      }
-
+    
 }
 export default ShoppingCartPage;

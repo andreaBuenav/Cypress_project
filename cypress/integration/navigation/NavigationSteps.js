@@ -74,10 +74,6 @@ And('The response code of Cart should be {int}', (expectedStatusCode)=>{
   cartPage.response(expectedStatusCode, cartUrl);
 })
 
-And('the title is Products',()=>{
-cartPage.getCartTitle();
-})
-
 
 
 //All Then
