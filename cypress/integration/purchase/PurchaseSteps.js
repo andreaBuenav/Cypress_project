@@ -27,6 +27,8 @@ import ItemPage from "../../support/Pages/ItemPage.js";
     
     When('I click on Monitors',()=>{
         homepage.clickOnMonitors();
+        cy.wait(2000);
+
         })
 
 
@@ -41,6 +43,7 @@ homepage.verifyResponseLaptops();
 })
 
 Then('I should only see monitors', ()=>{
+    homepage.verifyResponseMonitors();
 
 })
 

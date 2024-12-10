@@ -182,6 +182,20 @@ verifyResponseLaptops(){
   });
 }
 
+verifyResponseMonitors(){
+  cy.wait(2000);
+  cy.get('a.hrefch').then(($links) => {
+    expect($links).to.have.lengthOf(2);
+    const productIds = [];
+    $links.each((_, link) => {
+      const productId = link.href.split('=')[1];
+      productIds.push(productId);
+    });
+    expect(productIds.sort()).to.deep.equal(['10', '14']);
+    cy.get('a.hrefch').should('have.length', 2);
+  });
+}
+
 
 
 
@@ -195,8 +209,9 @@ SelectRandomPhone(){
     const productId = selectedLink.href.split('=')[1];   
     cy.wrap(selectedLink).click();   
     cy.url().should('include', `prod.html?idp_=${productId}`);
-
 });
 }
+
+
 }
 export default HomePage;
