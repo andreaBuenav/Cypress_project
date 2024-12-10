@@ -139,14 +139,17 @@ class HomePage {
 //Categories Methods
 
 clickOnphones(){
+  cy.wait(2000);
   cy.get(Phones).click();
 }
 
 clickOnLaptops(){
+  cy.wait(2000);
   cy.get(Laptops).click();
 }
 
 clickOnMonitors(){
+  cy.wait(2000);
   cy.get(Monitors).click();
 }
 
