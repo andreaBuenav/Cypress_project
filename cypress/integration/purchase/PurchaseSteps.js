@@ -47,7 +47,7 @@ Then('I should only see monitors', ()=>{
 
 })
 Then('A PopUp message should be shown',()=>{
-    cy.wait(2000)
+    cy.wait(3000)
     itemPage.getPopUp();
 })
 

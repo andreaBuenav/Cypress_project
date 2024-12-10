@@ -15,9 +15,7 @@ class ItemPage {
     }
 
     getPopUp(){
-        cy.get('button', { timeout: 20000 }).should('be.visible');
-        cy.get('button').contains('Aceptar').click();
-
+        cy.get('button').contains('Aceptar').should('be.visible').click();
     }
 
     cartResponse(expectedStatusCode){
