@@ -4,7 +4,8 @@ const AboutUs = 'li.nav-item:contains("About us")';
 const Cart = "#cartur";
 const Login = "#login2";
 const SignUp = "#signin2";
-const Close = ' button[data-dismiss="modal"]';
+const Modal = '#logInModal'
+const Close = '#logInModal button.btn-secondary';
 
 class HomePage {
   navigateToHomePage() {
@@ -33,14 +34,13 @@ class HomePage {
 
   clickOnLoginButton() {
     cy.clickAndOpen_InSameTab(Login);
+    cy.get(Modal).should('be.visible');
   }
 
   clickOnSignUpButton() {
     cy.clickAndOpen_InSameTab(SignUp);
   }
   clickOnCLoseButton() {
-    cy.get('#exampleModal').should('have.class', 'show'); 
-    cy.wait(5000); 
     cy.get(Close).should('be.visible').click();
   }
 
