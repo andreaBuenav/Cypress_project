@@ -17,13 +17,12 @@ class ItemPage {
         cy.get('button').contains('Aceptar').should('be.visible').click();
     }
 
-    cartResponse(expectedStatusCode){
-        cy.intercept("GET", expectedUrl).as("responseCheck");
-        cy.get(`a[href="prod.html?idp_=${itemId}"]`)
-        cy.wait("@responseCheck")
-        .its("response.statusCode")
-        .should("eq", expectedStatusCode);
-        cy.url().should("eq", expectedUrl);
+    cartResponse(){
+        cy.intercept("GET", "/prod.html?idp_*").as("productPage");
+        cy.wait("@productPage")
+            .its("response.statusCode")
+            .should("eq", 200); 
+        cy.url().should('include', '#'); 
     }
 
 

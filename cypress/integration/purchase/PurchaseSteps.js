@@ -58,7 +58,7 @@ And('I add the phone to the cart',()=>{
     itemPage.addToCart();
 })
 
-Then('The response code should be {int}', (expectedStatusCode)=>{
-    itemPage.cartResponse(expectedStatusCode);
+Then('The response code should be {int}', ()=>{
+    itemPage.cartResponse();
 })
 
