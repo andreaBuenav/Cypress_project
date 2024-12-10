@@ -110,30 +110,24 @@ class HomePage {
     cy.get("body").should("be.visible");
     cy.get(Carousel).should("be.visible");
     let maxSlides = 3;
-    let foundImage = false;
 
-    for (let i = 0; i < maxSlides && !foundImage; i++) {
-      cy.get(Carousel).then(() => {
-        cy.get(
-          `#carouselExampleIndicators .carousel-inner .carousel-item img[src="${imageSrc}"]`
-        )
-          .should("exist")
-          .then((img) => {
-            if (img.is(":visible")) {
-              cy.wrap(img).should("be.visible");
-              foundImage = true;
-            } else {
-              cy.get(Next).click();
-              cy.wait(3000);
-            }
-          });
-      });
+    const tryToFindImage = (attempt) => {
+        if (attempt >= maxSlides) {
+            throw new Error(`La imagen ${imageSrc} no fue encontrada después de ${maxSlides} intentos.`);
+        }
+        cy.get(`#carouselExampleIndicators .carousel-inner .carousel-item img[src="${imageSrc}"]`)
+            .then((img) => {
+                if (img.is(":visible")) {
+                    cy.wrap(img).should("be.visible"); 
+                } else {
+                    cy.get(Next).click();
+                    cy.wait(1000); 
+                    tryToFindImage(attempt + 1);
+                }
+            });
     }
-    if (!foundImage) {
-      throw new Error(
-        `La imagen ${imageSrc} no fue encontrada después de ${maxSlides} intentos.`
-      );
-    }
-  }
+
+    tryToFindImage(0); // Inicia el intento con 0
+}
 }
 export default HomePage;
