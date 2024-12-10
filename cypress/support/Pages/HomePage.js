@@ -100,6 +100,7 @@ class HomePage {
   //Carousel methods
   clickOnNext() {
     cy.get(Next).clickAndOpen_InSameTab();
+    cy.wait(1000);
   }
 
   clickOnBack() {
@@ -129,5 +130,10 @@ class HomePage {
 
     tryToFindImage(0); // Inicia el intento con 0
 }
+
+
+
+
+
 }
 export default HomePage;
