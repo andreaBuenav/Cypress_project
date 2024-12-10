@@ -2,7 +2,7 @@
 Feature: Manage Swipe Steps
 
     Background:
-        Given  Given I visit the homepage
+        Given I visit the homepage
 
     @smoke
     Scenario: click on next until samsung phone is visible
