@@ -5,7 +5,9 @@ const Cart = "#cartur";
 const Login = "#login2";
 const SignUp = "#signin2";
 const Modal = '#logInModal'
-const Close = '#logInModal button.btn-secondary';
+const ExModal = '#exampleModal'
+const Closelogin = '#logInModal button.btn-secondary';
+const CloseContact = '#exampleModal button.btn-secondary'
 
 class HomePage {
   navigateToHomePage() {
@@ -22,6 +24,8 @@ class HomePage {
 
   clickOnContactButton() {
     cy.clickAndOpen_InSameTab(Contact);
+    cy.get(ExModal).should('be.visible');
+
   }
 
   clickOnAboutUsButton() {
@@ -40,8 +44,13 @@ class HomePage {
   clickOnSignUpButton() {
     cy.clickAndOpen_InSameTab(SignUp);
   }
-  clickOnCLoseButton() {
-    cy.get(Close).should('be.visible').wait(5000).click();
+
+  //Closing buttons
+  clickOnCLoseButtonLogin() {
+    cy.get(Closelogin).should('be.visible').wait(5000).click();
+  }
+  clickOnCloseButtonContact(){
+    cy.get(CloseContact).should('be.visible').wait(5000).click();
   }
 
   //Get title
