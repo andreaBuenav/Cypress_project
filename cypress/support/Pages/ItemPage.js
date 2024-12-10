@@ -13,10 +13,11 @@ class ItemPage {
         cy.wait(1000);
 
     }
-    
+
     getPopUp(){
-        cy.get('.modal', { timeout: 10000 }).should('be.visible');
-        cy.get('.modal').contains('Aceptar').click();
+        cy.get('button', { timeout: 20000 }).should('be.visible');
+        cy.get('button').contains('Aceptar').click();
+
     }
 
     cartResponse(expectedStatusCode){
