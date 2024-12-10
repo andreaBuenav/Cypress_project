@@ -82,19 +82,19 @@ class HomePage {
  
   clickOnCloseButtonContact(){
     cy.get(ExModal).should('be.visible')
-    cy.get(CloseContact).should('be.visible').wait(5000).click();
+    cy.get(CloseContact).should('be.visible').wait(1000).click();
   }
 
   clickOncloseButtonAboutUs(){
-    cy.get(CloseAboutUS).should('be.visible').wait(2000).click();
+    cy.get(CloseAboutUS).should('be.visible').wait(1000).click();
   }
 
   clickOnCLoseButtonLogin() {
-    cy.get(Closelogin).should('be.visible').wait(5000).click();
+    cy.get(Closelogin).should('be.visible').wait(1000).click();
   }
 
   clickOnCloseSignUp(){
-    cy.get(CloseSignUp).should('be.visible').wait(2000).click();
+    cy.get(CloseSignUp).should('be.visible').wait(1000).click();
   }
 
   //Get title
