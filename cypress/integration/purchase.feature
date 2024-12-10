@@ -11,4 +11,4 @@ Feature: Manage Purchase Steps
         @smoke
         Scenario: Clicking Laptops category
         When I click on Laptops
-        Then I should only see Laptops
+        Then I should only see laptops
