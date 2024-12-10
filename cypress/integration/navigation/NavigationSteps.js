@@ -4,30 +4,30 @@ import HomePage from "../../support/Pages/HomePage";
 
 const homepage = new HomePage();
 
-Given('I visit the homepage', () => {
-   homepage.navigateToHomePage();
+Given("I visit the homepage", () => {
+  homepage.navigateToHomePage();
 });
 
-When('I click the login button', () => {
-    homepage.clickOnLoginButton();
+When("I click the login button", () => {
+  homepage.clickOnLoginButton();
 });
 
-When('I click the contact button', ()=>{
-    homepage.clickOnContactButton();
-})
-
-When('the title is Log in',()=> {
-  cy.get("#logInModalLabel").should('be.visible');
+When("I click the contact button", () => {
+  homepage.clickOnContactButton();
 });
 
-And('I click the close button', () => {
-    homepage.clickOnCLoseButton();
+When("the title is Log in", () => {
+  cy.get("#logInModalLabel").should("be.visible");
 });
 
-Then('I should see the homepage', () => {
-    cy.get('#carouselExampleIndicators').should('be.visible');
+And("I click the close button", () => {
+  homepage.clickOnCLoseButton();
 });
 
-And('The response code should be of {int}',(expectedStatusCode)=>{
-    homepage.response(expectedStatusCode)
-})
+Then("I should see the homepage", () => {
+  cy.get("#carouselExampleIndicators").should("be.visible");
+});
+
+And("The response code should be of {int}", (expectedStatusCode) => {
+  homepage.response(expectedStatusCode);
+});

@@ -1,53 +1,54 @@
 //Elements of the homepage
-const Contact = 'li.nav-item a.nav-link:contains("Contact")'
-const AboutUs = 'li.nav-item:contains("About us")'
-const Cart = '#cartur'
-const Login = '#login2'
-const SignUp = '#signin2'
-const Close = ' button[data-dismiss="modal"]'
+const Contact = 'li.nav-item a.nav-link:contains("Contact")';
+const AboutUs = 'li.nav-item:contains("About us")';
+const Cart = "#cartur";
+const Login = "#login2";
+const SignUp = "#signin2";
+const Close = ' button[data-dismiss="modal"]';
 
-class HomePage{
-   
-    navigateToHomePage(){
-        cy.visit(Cypress.config().baseUrl)
-    }
+class HomePage {
+  navigateToHomePage() {
+    cy.visit(Cypress.config().baseUrl);
+  }
 
-    //Obtains the response code
-    response(expectedStatusCode, url) {
-        cy.intercept('GET', url).as('responseCheck'); 
-        cy.wait('@responseCheck').its('response.statusCode').should('eq', expectedStatusCode);
-    }
+  //Obtains the response code
+  response(expectedStatusCode, url) {
+    cy.intercept("GET", url).as("responseCheck");
+    cy.wait("@responseCheck")
+      .its("response.statusCode")
+      .should("eq", expectedStatusCode);
+  }
 
-    clickOnContactButton(){
-        cy.clickAndOpen_InSameTab(Contact);
-    }
+  clickOnContactButton() {
+    cy.clickAndOpen_InSameTab(Contact);
+  }
 
-    clickOnAboutUsButton(){
-        cy.clickAndOpen_InSameTab(AboutUs);
-    }
+  clickOnAboutUsButton() {
+    cy.clickAndOpen_InSameTab(AboutUs);
+  }
 
-    clickOnCarButton(){
-        cy.get(Cart).click();
-    }
+  clickOnCarButton() {
+    cy.get(Cart).click();
+  }
 
-    clickOnLoginButton(){
-        cy.clickAndOpen_InSameTab(Login);
-    }
+  clickOnLoginButton() {
+    cy.clickAndOpen_InSameTab(Login);
+  }
 
-    clickOnSignUpButton(){
-        cy.clickAndOpen_InSameTab(SignUp);
-    }
-    clickOnCLoseButton(){
-        buttons.forEach(Close => {
-            if (button.textContent.trim() === 'Close') {
-              button.click();
-            }
-        });
-        }       
+  clickOnSignUpButton() {
+    cy.clickAndOpen_InSameTab(SignUp);
+  }
+  clickOnCLoseButton() {
+    Close.forEach((Close) => {
+      if (Close.textContent.trim() === "Close") {
+        Close.click();
+      }
+    });
+  }
 
-//Get title
-getTitle(expectedTitle){
-    cy.title().should('eq', expectedTitle); 
-}
+  //Get title
+  getTitle(expectedTitle) {
+    cy.title().should("eq", expectedTitle);
+  }
 }
 export default HomePage;

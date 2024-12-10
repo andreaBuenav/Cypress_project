@@ -3,9 +3,6 @@ Feature: Manage Navigation Steps
 Background:
 Given I visit the homepage
 
-
-
-
  Scenario: Navigate to Login
     When I click the login button
     When the title is Log in
