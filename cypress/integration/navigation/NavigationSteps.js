@@ -44,6 +44,7 @@ When('I click the close sign up button',()=>{
 
 When('I click on the Cart button', ()=>{
   homepage.clickOnCarButton();
+  cartPage.navigateToCartPage();
 })
 When('I click on the Home button',()=>{
   homepage.clickOnHomeButton();
