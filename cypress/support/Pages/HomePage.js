@@ -168,7 +168,7 @@ verifyResponsePhones(){
 verifyResponseLaptops(){
   cy.wait(1000);
   cy.get('a.hrefch').then(($links) => {
-    expect($links).to.have.lengthOf(8);
+    expect($links).to.have.lengthOf(15);
     const productIds = [];
     $links.each((_, link) => {
       const productId = link.href.split('=')[8];
