@@ -10,7 +10,7 @@ const SignUp = "#signin2";
 const CartPage = new ShoppingCartPage();
 
 //Carousel
-const Next = "#carouselExampleIndicators .carousel-control-next";
+const Next = "span.carousel-control-next-icon";
 const Back = "span.carousel-control-prev-icon";
 const Carousel = "#carouselExampleIndicators";
 
@@ -107,13 +107,12 @@ class HomePage {
   }
 
   slideToImage(imageSrc) {
-    cy.wait(2000);
     let maxSlides = 2;  
     let foundImage = false;
     for (let i = 0; i < maxSlides && !foundImage; i++) {
       cy.get(`#carouselExampleIndicators .carousel-inner .carousel-item img[src="${imageSrc}"]`).then((img) => {
         if (img.length > 0 && img.is(':visible')) {
-          cy.wrap(img).should('be.visible');  
+                    cy.wrap(img).should('be.visible');  
           foundImage = true;  
         } else {
           cy.get(Next).click();
