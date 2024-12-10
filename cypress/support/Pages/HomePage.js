@@ -8,9 +8,9 @@ const Cart = "#cartur";
 const Login = "#login2";
 const SignUp = "#signin2";
 //Categories
-const Phones = 'div.list-group > a#itemc[onclick="byCat(\'phone\')"]';
-const Laptops ='div.list-group > a#itemc[onclick="byCat(\'notebook\')"]';
-const Monitos = 'div.list-group > a#itemc[onclick="byCat(\'monitor\')"]';
+const Phones = 'a#itemc[onclick="byCat(\'phone\')"]';
+const Laptops ='a#itemc[onclick="byCat(\'notebook\')"]';
+const Monitos = 'a#itemc[onclick="byCat(\'monitor\')"]';
 const CartPage = new ShoppingCartPage();
 
 //Carousel
