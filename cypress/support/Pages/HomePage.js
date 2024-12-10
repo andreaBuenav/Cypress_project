@@ -177,7 +177,7 @@ verifyResponseLaptops(){
       const productId = link.href.split('=')[1];
       productIds.push(productId);
     });
-    expect(productIds.sort()).to.deep.equal(['8', '9', '11', '12', '13', '15']);
+    expect(productIds.sort()).to.deep.equal(['11', '12', '13', '15', '8', '9']);
     cy.get('a.hrefch').should('have.length', 6);
   });
 }
