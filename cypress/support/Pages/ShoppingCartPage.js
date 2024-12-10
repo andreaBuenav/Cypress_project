@@ -36,7 +36,7 @@ class ShoppingCartPage {
       .its("response.statusCode")
       .should("eq", expectedStatusCode);
   }
-
+//
   deleteAllItems() {
     cy.wait(1000)
    cy.get(Delete).click();
