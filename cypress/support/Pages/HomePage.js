@@ -8,9 +8,9 @@ const Cart = "#cartur";
 const Login = "#login2";
 const SignUp = "#signin2";
 //Categories
-const Phones = "a#itemc[onclick=\"byCat('phone')\"]";
-const Laptops = "a#itemc[onclick=\"byCat('notebook')\"]";
-const Monitos = "a#itemc[onclick=\"byCat('monitor')\"]";
+const Phones = 'a#itemc[onclick="byCat(\'phone\')"]';
+const Laptops ='a#itemc[onclick="byCat(\'notebook\')"]';
+const Monitos = 'a#itemc[onclick="byCat(\'monitor\')"]';
 const CartPage = new ShoppingCartPage();
 
 //Carousel
@@ -111,101 +111,89 @@ class HomePage {
     cy.get(Back).click();
   }
 
+
   slideToImage(imageSrc) {
     cy.get("body").should("be.visible");
     cy.get(Carousel).should("be.visible");
     let maxSlides = 3;
 
     const tryToFindImage = (attempt) => {
-      if (attempt >= maxSlides) {
-        throw new Error(
-          `La imagen ${imageSrc} no fue encontrada después de ${maxSlides} intentos.`
-        );
-      }
-      cy.get(
-        `#carouselExampleIndicators .carousel-inner .carousel-item img[src="${imageSrc}"]`
-      ).then((img) => {
-        if (img.is(":visible")) {
-          cy.wrap(img).should("be.visible");
-        } else {
-          cy.get(Next).click();
-          cy.wait(1000);
-          tryToFindImage(attempt + 1);
+        if (attempt >= maxSlides) {
+            throw new Error(`La imagen ${imageSrc} no fue encontrada después de ${maxSlides} intentos.`);
         }
-      });
-    };
+        cy.get(`#carouselExampleIndicators .carousel-inner .carousel-item img[src="${imageSrc}"]`)
+            .then((img) => {
+                if (img.is(":visible")) {
+                    cy.wrap(img).should("be.visible"); 
+                } else {
+                    cy.get(Next).click();
+                    cy.wait(1000); 
+                    tryToFindImage(attempt + 1);
+                }
+            });
+    }
 
     tryToFindImage(0); // Inicia el intento con 0
-  }
+}
 
-  //Categories Methods
+//Categories Methods
 
-  clickOnphones() {
-    cy.get(Phones).click();
-  }
+clickOnphones(){
+  cy.get(Phones).click();
+}
 
-  clickOnLaptops() {
-    cy.get(Laptops).click();
-  }
+clickOnLaptops(){
+  cy.get(Laptops).click();
+}
 
-  clickOnMonitors() {
-    cy.get(Monitos).click();
-  }
+clickOnMonitors(){
+  cy.get(Monitos).click();
+}
 
-  verifyResponsePhones() {
-    cy.wait(1000);
-    cy.get("a.hrefch").then(($links) => {
-      expect($links).to.have.lengthOf(7);
-      const productIds = [];
-      $links.each((_, link) => {
-        const productId = link.href.split("=")[1];
-        productIds.push(productId);
-      });
-      expect(productIds.sort()).to.deep.equal([
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-      ]);
-      cy.get("a.hrefch").should("have.length", 7);
+verifyResponsePhones(){
+  cy.wait(1000);
+  cy.get('a.hrefch').then(($links) => {
+    expect($links).to.have.lengthOf(7);
+    const productIds = [];
+    $links.each((_, link) => {
+      const productId = link.href.split('=')[1];
+      productIds.push(productId);
     });
-  }
+    expect(productIds.sort()).to.deep.equal(['1', '2', '3', '4', '5', '6', '7']);
+    cy.get('a.hrefch').should('have.length', 7);
+  });
+        
+}
 
-  verifyResponseLaptops() {
-    cy.wait(1000);
-    cy.get("a.hrefch")
-      .filter(":visible")
-      .then(($links) => {
-        expect($links).to.have.lengthOf(8);
-        const productIds = [];
-        $links.each((_, link) => {
-          const productId = link.href.split("=")[1];
-          productIds.push(productId);
-        });
-        expect(productIds.sort()).to.deep.equal([
-          "8",
-          "9",
-          "10",
-          "11",
-          "12",
-          "13",
-          "14",
-          "15",
-        ]);
-      });
-  }
-
-  SelectRandomPhone() {
-    cy.get("a.hrefch").then(($links) => {
-      const randomIndex = Math.floor(Math.random() * $links.length);
-      const selectedLink = $links[randomIndex];
-      const productId = selectedLink.href.split("=")[1];
-      cy.wrap(selectedLink).click();
-      cy.url().should("include", `prod.html?idp_=${productId}`);
+verifyResponseLaptops(){
+  cy.wait(1000);
+  cy.get('a.hrefch').filter(':visible').then(($links) => {
+    expect($links).to.have.lengthOf(8);
+    const productIds = [];
+    $links.each((_, link) => {
+      const productId = link.href.split('=')[8];
+      productIds.push(productId);
     });
-  }
+    expect(productIds.sort()).to.deep.equal(['8', '9', '10', '11', '12', '13', '14', '15']);
+    cy.get('a.hrefch').should('have.length', 8);
+  });
+}
+
+
+
+
+
+
+
+SelectRandomPhone(){
+  cy.get('a.hrefch').then(($links) => {
+    const randomIndex = Math.floor(Math.random() * $links.length); 
+    const selectedLink = $links[randomIndex];
+    const productId = selectedLink.href.split('=')[1];   
+    cy.wrap(selectedLink).click();   
+    cy.url().should('include', `prod.html?idp_=${productId}`);
+
+});
+}
 }
 export default HomePage;
