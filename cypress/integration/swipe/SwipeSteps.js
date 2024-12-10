@@ -23,13 +23,13 @@ Given("I visit the homepage", () => {
   });
 
 
-  Then('The response code should be {int}', (expectedStatusCode) => {
-    homepage.response(expectedStatusCode);
-  });
-
-  Then('I go back', ()=>{
+  Then('I go back', () => {
     homepage.clickOnBack();
-  })
+});
+
+Then('The response code should be {int}', (expectedStatusCode) => {
+    homepage.response(expectedStatusCode);
+});
   
 
 
