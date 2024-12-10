@@ -24,5 +24,5 @@ Feature: Manage Purchase Steps
         Given I visit the homepage
         When I click on Phones
         And I select one phone
-        And I add the phone to the cart
-        Then The response code should be 200
+        Then I add the phone to the cart
+

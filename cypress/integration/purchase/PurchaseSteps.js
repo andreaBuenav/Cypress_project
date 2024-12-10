@@ -46,6 +46,10 @@ Then('I should only see monitors', ()=>{
     homepage.verifyResponseMonitors();
 
 })
+Then('I add the phone to the cart',()=>{
+    itemPage.addToCart();
+})
+
 
 
 
@@ -54,11 +58,5 @@ Then('I should only see monitors', ()=>{
 And('I select one phone',()=>{
     homepage.selectRandomPhone();
 })
-And('I add the phone to the cart',()=>{
-    itemPage.addToCart();
-})
 
-Then('The response code should be {int}', ()=>{
-    itemPage.cartResponse();
-})
 

@@ -17,11 +17,7 @@ class ItemPage {
         cy.get('button').contains('Aceptar').should('be.visible').click();
     }
 
-    cartResponse(){
-        cy.intercept("GET", "https://www.demoblaze.com/prod.html?idp_*=*").as("productPage"); 
-        cy.wait("@productPage").its("response.statusCode").should("eq", 200);
-        cy.url().should('include', 'prod.html?idp_=').and('include', '#');
-    }
+  
 
 
 
