@@ -70,8 +70,10 @@ And('The response code should be {int}', (expectedStatusCode) => {
 });
 
 And('The response code of Cart should be {int}', (expectedStatusCode)=>{
-  cartPage.response(expectedStatusCode);
+  const cartUrl = '/cart.html'; 
+  cartPage.response(expectedStatusCode, cartUrl);
 })
+
 And('the title is Products',()=>{
 cartPage.getCartTitle();
 })
