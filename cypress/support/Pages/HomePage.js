@@ -4,6 +4,11 @@ const AboutUs = 'li.nav-item:contains("About us")';
 const Cart = "#cartur";
 const Login = "#login2";
 const SignUp = "#signin2";
+
+//Carousel
+
+
+//PopUp pages 
 const Modal = '#logInModal'
 const ExModal = '#exampleModal'
 const videoModal = '#videoModal'
