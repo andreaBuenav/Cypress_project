@@ -111,6 +111,7 @@ class HomePage {
     let foundImage = false;
 
     for (let i = 0; i < maxSlides && !foundImage; i++) {
+      cy.wait(30000);
       cy.get(Carousel).then(() => {
         cy.get(
           `#carouselExampleIndicators .carousel-inner .carousel-item img[src="${imageSrc}"]`
