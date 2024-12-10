@@ -11,7 +11,7 @@ const MonthInput = "#month";
 const YearInput = "#year";
 const OrderModal = "#orderModal";
 const CloseOrder = "#orderModal button.btn.btn-secondary";
-const PurchaseOrder = "#orderModal btn btn-primary";
+const PurchaseOrder = 'button[type="button"][onclick="purchaseOrder()"]';
 const PlaceOrder = ".btn.btn-success";
 const Ok = "button.confirm.btn.btn-lg.btn-primary";
 
