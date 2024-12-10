@@ -71,9 +71,11 @@ Then('The cart should be empty', () =>{
 And('I select one phone',()=>{
     homepage.selectRandomPhone();
 })
+
 And('I fill the credentials', ()=>{
     cartPage.fillCredentials();
 })
+
 And('I click delete',()=>{
     cy.wait(2000)
     cartPage.deleteAllItems();

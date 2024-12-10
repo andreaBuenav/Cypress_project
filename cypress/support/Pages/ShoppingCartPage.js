@@ -38,6 +38,7 @@ class ShoppingCartPage {
   }
 
   deleteAllItems() {
+    wait(1000)
     cy.get('a[onclick^="deleteItem"]').then(($links) => {
       if ($links.length > 0) {
         cy.wrap($links[0]).click();
@@ -65,7 +66,7 @@ class ShoppingCartPage {
   verifyPurchase() {
     cy.get(Ok).should("be.visible").wait(2000).click();
   }
-  
+
   verifyemptyCart(){
     cy.get(Delete).should('not.exist');
   }
