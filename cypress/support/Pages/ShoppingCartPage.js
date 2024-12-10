@@ -26,7 +26,7 @@ const year = 2024;
 
 class ShoppingCartPage{
     navigateToCartPage(){
-        cy.visit(Cypress.config().baseUrl("/cart.html"));
+      cy.visit(`${Cypress.config().baseUrl}/cart.html`);
     }
 
     response(expectedStatusCode, url) {
