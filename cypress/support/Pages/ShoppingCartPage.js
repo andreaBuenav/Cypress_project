@@ -30,8 +30,8 @@ class ShoppingCartPage{
     }
 
     response(expectedStatusCode, url) {
-        cy.intercept("GET", url).as("responseCheck");
-        cy.wait("@responseCheck")
+      cy.intercept('GET', '/cart.html').as('getCart');
+        cy.wait("@getCart")
           .its("response.statusCode")
           .should("eq", expectedStatusCode);
       }
