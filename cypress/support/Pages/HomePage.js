@@ -107,6 +107,7 @@ class HomePage {
   }
 
   slideToImage(imageSrc) {
+    cy.wait(2000);
     let maxSlides = 2;
     let foundImage = false;
     for (let i = 0; i < maxSlides && !foundImage; i++) {
