@@ -168,10 +168,10 @@ verifyResponsePhones(){
 verifyResponseLaptops(){
   cy.wait(1000);
   cy.get('a.hrefch').then(($links) => {
-    expect($links).to.have.lengthOf(15);
+    expect($links).to.have.lengthOf(8);
     const productIds = [];
     $links.each((_, link) => {
-      const productId = link.href.split('=')[8];
+      const productId = link.href.split('=')[1];
       productIds.push(productId);
     });
     expect(productIds.sort()).to.deep.equal(['8', '9', '10', '11', '12', '13', '14','15']);
