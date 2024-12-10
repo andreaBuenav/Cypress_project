@@ -19,11 +19,26 @@ import ItemPage from "../../support/Pages/ItemPage.js";
   homepage.clickOnphones();
   })
 
+  When('I click on Laptops',()=>{
+    homepage.clickOnLaptops();
+    }) 
+    
+    When('I click on Monitors',()=>{
+        homepage.clickOnMonitors();
+        })
+
 
 
   //Then
-
 Then('I should only see phones', () => {
-    homepage.verifyResponse();
+    homepage.verifyResponsePhones();
 });
+
+Then('I should only see laptops', ()=>{
+
+})
+
+Then('I should only see monitors', ()=>{
+
+})
 
