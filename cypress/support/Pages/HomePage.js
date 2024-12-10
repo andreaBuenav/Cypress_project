@@ -6,6 +6,8 @@ const Login = "#login2";
 const SignUp = "#signin2";
 const Modal = '#logInModal'
 const ExModal = '#exampleModal'
+const videoModal = '#videoModal'
+const CloseAboutUS ='#videoModal button.btn.btn-secondary'
 const Closelogin = '#logInModal button.btn-secondary';
 const CloseContact = '#exampleModal button.btn.btn-secondary'
 
@@ -22,6 +24,7 @@ class HomePage {
       .should("eq", expectedStatusCode);
   }
 
+  //Click each button
   clickOnContactButton() {
     cy.clickAndOpen_InSameTab(Contact);
     cy.get(ExModal).should('be.visible');
@@ -30,6 +33,7 @@ class HomePage {
 
   clickOnAboutUsButton() {
     cy.clickAndOpen_InSameTab(AboutUs);
+    cy.get(videoModal).should('be.visible');
   }
 
   clickOnCarButton() {
@@ -52,6 +56,9 @@ class HomePage {
   clickOnCloseButtonContact(){
     cy.get(ExModal).should('be.visible')
     cy.get(CloseContact).should('be.visible').wait(5000).click();
+  }
+  clickOncloseButtonAboutUs(){
+    cy.get(CloseAboutUS).should('be.visible').wait(2000).click();
   }
 
   //Get title
