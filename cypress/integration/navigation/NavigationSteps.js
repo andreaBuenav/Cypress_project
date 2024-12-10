@@ -44,7 +44,7 @@ And("the title is Log in", () => {
 });
 
 And("the title is About us", () => {
-  cy.get("#videoModalLabel").should("be.vsible");
+  cy.get("#videoModalLabel").should("be.visible");
 });
 
 And("The response code should be of {int}", (expectedStatusCode) => {
