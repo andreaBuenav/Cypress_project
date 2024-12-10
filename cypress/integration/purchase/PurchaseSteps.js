@@ -46,7 +46,7 @@ Then('I should only see monitors', ()=>{
     homepage.verifyResponseMonitors();
 
 })
-Then(' A PopUp message should be shown',()=>{
+Then('A PopUp message should be shown',()=>{
     cy.wait(2000)
     itemPage.getPopUp();
 })
@@ -61,7 +61,7 @@ And('I add the phone to the cart',()=>{
     itemPage.addToCart();
 })
 
-And('The response code should be 200', ()=>{
-    itemPage.cartResponse();
+Then('The response code should be {int}', (expectedStatusCode)=>{
+    itemPage.cartResponse(expectedStatusCode);
 })
 
