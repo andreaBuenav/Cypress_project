@@ -7,6 +7,10 @@ const AboutUs = 'li.nav-item:contains("About us")';
 const Cart = "#cartur";
 const Login = "#login2";
 const SignUp = "#signin2";
+//Categories
+const Phones = 'a#itemc[onclick="byCat(\'phone\')"]';
+const Laptops ='a#itemc[onclick="byCat(\'notebook\')"]';
+const Monitos = 'a#itemc[onclick="byCat(\'monitor\')"]';
 const CartPage = new ShoppingCartPage();
 
 //Carousel
@@ -132,9 +136,31 @@ class HomePage {
     tryToFindImage(0); // Inicia el intento con 0
 }
 
+//Categories Methods
+
+clickOnphones(){
+  cy.get(Phones).clickAndOpen_InSameTab();
+}
+
+clickOnLaptops(){
+  cy.get(Laptops).clickAndOpen_InSameTab();
+}
+
+clickOnMonitors(){
+  cy.get(Monitos).clickAndOpen_InSameTab();
+}
 
 
 
+SelectRandomPhone(){
+  cy.get('a.hrefch').then(($links) => {
+    const randomIndex = Math.floor(Math.random() * $links.length); 
+    const selectedLink = $links[randomIndex];
+    const productId = selectedLink.href.split('=')[1];   
+    cy.wrap(selectedLink).click();   
+    cy.url().should('include', `prod.html?idp_=${productId}`);
 
+});
+}
 }
 export default HomePage;
