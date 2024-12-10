@@ -75,7 +75,7 @@ And('I fill the credentials', ()=>{
     cartPage.fillCredentials();
 })
 And('I click delete',()=>{
-    wait(2000)
+    cy.wait(2000)
     cartPage.deleteAllItems();
 })
 
