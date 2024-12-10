@@ -168,14 +168,14 @@ verifyResponsePhones(){
 verifyResponseLaptops(){
   cy.wait(1000);
   cy.get('a.hrefch').filter(':visible').then(($links) => {
-    expect($links).to.have.lengthOf(8);
+    expect($links).to.have.lengthOf(15);
     const productIds = [];
     $links.each((_, link) => {
       const productId = link.href.split('=')[1];
       productIds.push(productId);
     });
     expect(productIds.sort()).to.deep.equal(['8', '9', '10', '11', '12', '13', '14', '15']);
-    cy.get('a.hrefch').should('have.length', 15);
+    cy.get('a.hrefch').should('have.length', 8);
   });
 }
 
