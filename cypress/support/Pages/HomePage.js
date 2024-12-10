@@ -139,7 +139,7 @@ class HomePage {
 //Categories Methods
 
 clickOnphones(){
-  cy.get(Phones).clickAndOpen_InSameTab();
+  cy.get(Phones).click();
 }
 
 clickOnLaptops(){
