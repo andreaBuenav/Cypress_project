@@ -26,11 +26,13 @@ const year = 2024;
 class ShoppingCartPage {
   navigateToCartPage() {
     cy.visit(`${Cypress.config().baseUrl}/cart.html`);
+    cy.request("/cart.html")
+    .its("status")   
+    .should("eq", 200);
   }
 
   response(expectedStatusCode) {
     cy.intercept("GET", `${Cypress.config().baseUrl}/cart.html`).as("getCart");
-    cy.wait(1000);
     cy.wait("@getCart")
       .its("response.statusCode")
       .should("eq", expectedStatusCode);
