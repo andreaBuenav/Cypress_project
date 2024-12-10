@@ -107,6 +107,8 @@ class HomePage {
   }
 
   slideToImage(imageSrc) {
+    cy.get("body").should("be.visible");
+    cy.get(Carousel).should("be.visible");
     let maxSlides = 3;
     let foundImage = false;
 
@@ -121,8 +123,8 @@ class HomePage {
               cy.wrap(img).should("be.visible");
               foundImage = true;
             } else {
-              this.clickOnNext();
-              cy.wait(2000);
+              cy.get(Next).click();
+              cy.wait(3000);
             }
           });
       });
