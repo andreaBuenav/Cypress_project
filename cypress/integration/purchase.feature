@@ -6,4 +6,4 @@ Feature: Manage Purchase Steps
     @smoke
     Scenario: Clicking Phones category
         When I click on Phones
-        Then The response code should be 200
+        Then The response code for the click action should be 200

@@ -150,6 +150,20 @@ clickOnMonitors(){
   cy.get(Monitos).clickAndOpen_InSameTab();
 }
 
+verifyResponse(){
+  cy.intercept('GET', url) 
+            .as('getPhones'); 
+        cy.wait('@getPhones').then((interception) => {
+            expect(interception.response.statusCode).to.eq(200);
+        });
+        for (let i = 1; i <= 7; i++) {
+            cy.get(`.product:nth-child(${i})`) 
+              .should('be.visible');
+        }
+        cy.get('.product:nth-child(n+8)')
+          .should('not.be.visible');
+}
+
 
 
 SelectRandomPhone(){

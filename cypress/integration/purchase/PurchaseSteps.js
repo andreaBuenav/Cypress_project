@@ -23,7 +23,7 @@ import ItemPage from "../../support/Pages/ItemPage.js";
 
   //Then
 
-Then('The response code should be {int}', (expectedStatusCode) => {
-    homepage.response(expectedStatusCode);
+Then('The response code for the click action should be {int}', () => {
+    homepage.verifyResponse();
 });
 
