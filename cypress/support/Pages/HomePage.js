@@ -107,27 +107,29 @@ class HomePage {
   }
 
   slideToImage(imageSrc) {
-    cy.wait(2000);
-    let maxSlides = 2;
+    let maxSlides = 3;
     let foundImage = false;
+
     for (let i = 0; i < maxSlides && !foundImage; i++) {
       cy.get(Carousel).then(() => {
         cy.get(
           `#carouselExampleIndicators .carousel-inner .carousel-item img[src="${imageSrc}"]`
-        ).then((img) => {
-          if (img.length > 0 && img.is(":visible")) {
-            cy.wrap(img).should("be.visible");
-            foundImage = true;
-          } else {
-            cy.get(Next).click();
-            cy.wait(1500);
-          }
-        });
+        )
+          .should("exist")
+          .then((img) => {
+            if (img.is(":visible")) {
+              cy.wrap(img).should("be.visible");
+              foundImage = true;
+            } else {
+              this.clickOnNext();
+              cy.wait(2000);
+            }
+          });
       });
     }
     if (!foundImage) {
       throw new Error(
-        `Image ${imageSrc} no found after ${maxSlides} attempts.`
+        `La imagen ${imageSrc} no fue encontrada después de ${maxSlides} intentos.`
       );
     }
   }
