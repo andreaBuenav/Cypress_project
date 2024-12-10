@@ -44,7 +44,6 @@ When('I click the close sign up button',()=>{
 
 When('I click on the Cart button', ()=>{
   homepage.clickOnCarButton();
-  cartPage.navigateToCartPage();
 })
 When('I click on the Home button',()=>{
   homepage.clickOnHomeButton();
@@ -75,6 +74,10 @@ And('The response code of Cart should be {int}', (expectedStatusCode)=>{
 })
 And('the title is Products',()=>{
 cartPage.getCartTitle();
+})
+
+And('I navigate to Cart Page',()=>{
+  cartPage.navigateToCartPage();
 })
 
 //All Then
