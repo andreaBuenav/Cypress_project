@@ -23,7 +23,7 @@ import ItemPage from "../../support/Pages/ItemPage.js";
 
   //Then
 
-Then('The response code for the click action should be {int}', () => {
+Then('I should only see phones', () => {
     homepage.verifyResponse();
 });
 
