@@ -38,9 +38,11 @@ class HomePage{
         cy.clickAndOpen_InSameTab(SignUp);
     }
     clickOnCLoseButton(){
-        cy.get(Close).should('be.visible').click();
-       
-}
+        buttons.forEach(Close => {
+            if (button.textContent.trim() === 'Close') {
+              button.click();
+            }       
+
 //Get title
 getTitle(expectedTitle){
     cy.title().should('eq', expectedTitle); 
