@@ -76,9 +76,7 @@ And('the title is Products',()=>{
 cartPage.getCartTitle();
 })
 
-And('I navigate to Cart Page',()=>{
-  cartPage.navigateToCartPage();
-})
+
 
 //All Then
 Then('I should see the homepage', () => {
