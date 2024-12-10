@@ -23,7 +23,7 @@ Given("I visit the homepage", () => {
   });
 
 
-  Then('I go back', () => {
+  Then('I click on Back', () => {
     cy.wait(500);
     homepage.clickOnBack();
 });

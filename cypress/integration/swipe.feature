@@ -19,5 +19,5 @@ Feature: Manage Swipe Steps
         Given I visit the homepage
         When I slide until I see the image "Samsung1.jpg"
         And I should see the image "Samsung1.jpg"
-        Then I go Back
+        Then I click on Back
 

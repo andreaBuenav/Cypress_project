@@ -104,7 +104,7 @@ class HomePage {
   }
 
   clickOnBack() {
-    cy.get(Back).clickAndOpen_InSameTab();
+    cy.get(Back).click();
   }
 
 
