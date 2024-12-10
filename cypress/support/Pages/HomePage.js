@@ -7,7 +7,7 @@ const SignUp = "#signin2";
 const Modal = '#logInModal'
 const ExModal = '#exampleModal'
 const Closelogin = '#logInModal button.btn-secondary';
-const CloseContact = '#exampleModal button.btn-secondary'
+const CloseContact = '#exampleModal button.btn.btn-secondary'
 
 class HomePage {
   navigateToHomePage() {
