@@ -39,9 +39,9 @@ class HomePage {
     cy.clickAndOpen_InSameTab(SignUp);
   }
   clickOnCLoseButton() {
-    cy.get('#exampleModal').should('be.visible');
-    cy.get('#exampleModal').should('have.class', 'show');
-    cy.get(Close).eq(0).click();
+    cy.get('#exampleModal').should('have.class', 'show'); 
+    cy.wait(5000); 
+    cy.get(Close).should('be.visible').click();
   }
 
   //Get title
