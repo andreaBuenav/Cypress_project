@@ -7,6 +7,7 @@ const AboutUs = 'li.nav-item:contains("About us")';
 const Cart = "#cartur";
 const Login = "#login2";
 const SignUp = "#signin2";
+const CartPage = new ShoppingCartPage();
 
 //Carousel
 const Next = 'span.carousel-control-next-icon'
@@ -70,7 +71,7 @@ class HomePage {
 
   clickOnCarButton(){
     cy.get(Cart).click();
-   return new ShoppingCartPage();
+   CartPage.navigateToCartPage();
    
   }
   
