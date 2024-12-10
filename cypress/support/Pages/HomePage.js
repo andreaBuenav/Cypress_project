@@ -151,6 +151,7 @@ clickOnMonitors(){
 }
 
 verifyResponse(){
+  cy.wait(1000);
   cy.get('a.hrefch').then(($links) => {
     expect($links).to.have.lengthOf(7);
     const productIds = [];
