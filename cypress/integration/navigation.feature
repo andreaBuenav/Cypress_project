@@ -16,7 +16,7 @@ Feature: Manage Navigation Steps
         When I click the about us button
         And the title is About us
         When I click on the close about us button
-        Then I sould see the homepage
+        Then I should see the homepage
 
     @smoke
     Scenario: Navigate to Login
