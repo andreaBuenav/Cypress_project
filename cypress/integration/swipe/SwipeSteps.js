@@ -13,7 +13,7 @@ Given("I visit the homepage", () => {
     homepage.slideToImage(imageName);
   });
 
-  When('I slide one time',()=>{
+  When('I slide next and go back',()=>{
     homepage.clickOnNext();
   })
 
@@ -24,12 +24,8 @@ Given("I visit the homepage", () => {
       .should('be.visible');
   });
 
-  Then('I go back one time',()=>{
-   homepage.clickOnBack();
-  })
 
-  //And
-  And('The response code should be {int}', (expectedStatusCode) => {
+  Then('The response code should be {int}', (expectedStatusCode) => {
     homepage.response(expectedStatusCode);
   });
   

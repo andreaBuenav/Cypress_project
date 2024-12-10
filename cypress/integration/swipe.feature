@@ -16,6 +16,5 @@ Feature: Manage Swipe Steps
 
     @smoke
     Scenario: click on next and then click on Back
-    When I slide one time
-    Then I go back one time
-    And The response code should be 200
+    When I slide next and go back
+    Then The response code should be 200
