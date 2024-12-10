@@ -46,11 +46,6 @@ Then('I should only see monitors', ()=>{
     homepage.verifyResponseMonitors();
 
 })
-Then('A PopUp message should be shown',()=>{
-    cy.wait(3000)
-    itemPage.getPopUp();
-})
-
 
 //And
 

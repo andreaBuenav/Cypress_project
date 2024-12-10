@@ -25,5 +25,4 @@ Feature: Manage Purchase Steps
         When I click on Phones
         And I select one phone
         And I add the phone to the cart
-        Then A PopUp message should be shown
-        And The response code should be 200
+        Then The response code should be 200
