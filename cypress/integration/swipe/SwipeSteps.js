@@ -10,11 +10,12 @@ Given("I visit the homepage", () => {
   //When
 
   When("I slide until I see the image {string}", (imageName) => {
+    cy.wait(30000);
     homepage.slideToImage(imageName);
   });
 
   //Then
-  
+
   Then("I should see the image {string}", (imageName) => {
     cy.get(`#carouselExampleIndicators .carousel-inner .carousel-item img[src="${imageName}"]`)
       .should('be.visible');
