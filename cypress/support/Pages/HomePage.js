@@ -209,7 +209,6 @@ selectRandomPhone(){
     const productId = selectedLink.href.split('=')[1];   
     cy.wrap(selectedLink).click();   
     cy.url().should('include', `prod.html?idp_=${productId}`);
-    return productId;
 });
 
 }
