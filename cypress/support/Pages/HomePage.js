@@ -42,7 +42,7 @@ class HomePage{
             if (button.textContent.trim() === 'Close') {
               button.click();
             }
-        }
+        });
         }       
 
 //Get title
