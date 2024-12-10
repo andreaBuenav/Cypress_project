@@ -35,7 +35,7 @@ Then('I should only see phones', () => {
 });
 
 Then('I should only see laptops', ()=>{
-
+homepage.verifyResponseLaptops();
 })
 
 Then('I should only see monitors', ()=>{
