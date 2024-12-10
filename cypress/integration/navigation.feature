@@ -37,7 +37,7 @@ Feature: Manage Navigation Steps
         And the response code of Cart should be 200
         When I click on the Home button
         Then I should see the homepage
-        And the response code of Cart should be 200
+        And the response code should be 200
 
 
 
