@@ -56,6 +56,7 @@ Then('I should only see monitors', ()=>{
 })
 Then('I add the phone to the cart',()=>{
     itemPage.addToCart();
+    cy.wait(2000)
 })
 Then('The sucess message should be present',()=>{
     cartPage.verifyPurchase();
