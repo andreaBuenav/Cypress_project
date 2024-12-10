@@ -28,8 +28,9 @@ class ShoppingCartPage {
     cy.visit(`${Cypress.config().baseUrl}/cart.html`);
   }
 
-  response(expectedStatusCode, url) {
+  response(expectedStatusCode) {
     cy.intercept("GET", `${Cypress.config().baseUrl}/cart.html`).as("getCart");
+    cy.wait(1000);
     cy.wait("@getCart")
       .its("response.statusCode")
       .should("eq", expectedStatusCode);

@@ -75,8 +75,7 @@ Then('I should see the homepage', () => {
 });
 
 And('The response code of Cart should be {int}', (expectedStatusCode)=>{
-  const cartUrl = '/cart.html'; 
-  cartPage.response(expectedStatusCode, cartUrl);
+  cartPage.response(expectedStatusCode);
 
 })
 

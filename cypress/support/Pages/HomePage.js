@@ -71,7 +71,9 @@ class HomePage {
 
   clickOnCarButton(){
     cy.get(Cart).click();
-   CartPage.navigateToCartPage();
+    cy.request("/cart.html")
+      .its("status")   
+      .should("eq", 200);
    
   }
   
