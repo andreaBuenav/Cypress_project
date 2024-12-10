@@ -10,7 +10,7 @@ const SignUp = "#signin2";
 //Categories
 const Phones = 'a#itemc[onclick="byCat(\'phone\')"]';
 const Laptops ='a#itemc[onclick="byCat(\'notebook\')"]';
-const Monitos = 'a#itemc[onclick="byCat(\'monitor\')"]';
+const Monitors = 'a#itemc[onclick="byCat(\'monitor\')"]';
 const CartPage = new ShoppingCartPage();
 
 //Carousel
@@ -147,7 +147,7 @@ clickOnLaptops(){
 }
 
 clickOnMonitors(){
-  cy.get(Monitos).click();
+  cy.get(Monitors).click();
 }
 
 verifyResponsePhones(){
