@@ -12,6 +12,7 @@ const YearInput = "#year";
 const OrderModal = "#orderModal";
 const CloseOrder = "#orderModal button.btn.btn-secondary";
 const PurchaseOrder = 'button[type="button"][onclick="purchaseOrder()"]';
+const Delete = 'a[onclick^="deleteItem"]';
 const PlaceOrder = ".btn.btn-success";
 const Ok = "button.confirm.btn.btn-lg.btn-primary";
 
@@ -25,25 +26,32 @@ const year = 2024;
 
 class ShoppingCartPage {
   navigateToCartPage() {
-    cy.visit('cart.html')
+    cy.visit("cart.html");
   }
 
   //Obtains the response code
   response(expectedStatusCode, url) {
     cy.intercept("GET", url).as("responseCheck");
     cy.wait("@responseCheck")
-    .its("response.statusCode")
-    .should("eq", expectedStatusCode);
+      .its("response.statusCode")
+      .should("eq", expectedStatusCode);
   }
 
-  clickOnDelete() {}
+  deleteAllItems() {
+    cy.get('a[onclick^="deleteItem"]').then(($links) => {
+      if ($links.length > 0) {
+        cy.wrap($links[0]).click();
+        cy.wait(1000);
+        this.deleteAllItems();
+      }
+    });
+  }
 
   purchaseOrder() {
     cy.get(PlaceOrder).click();
-    
   }
-  
-  fillCredentials(){
+
+  fillCredentials() {
     cy.get(OrderModal).wait(1000).should("be.visible");
     cy.get(NameInput).type(name);
     cy.get(CountryInput).type(country);
@@ -54,13 +62,16 @@ class ShoppingCartPage {
     cy.get(PurchaseOrder).click();
   }
 
-  verifyPurchase(){
+  verifyPurchase() {
     cy.get(Ok).should("be.visible").wait(2000).click();
   }
+  
+  verifyemptyCart(){
+    cy.get(Delete).should('not.exist');
+  }
 
-getTitle(){
-  cy.get(Title).should('be.visible');
-}
-
+  getTitle() {
+    cy.get(Title).should("be.visible");
+  }
 }
 export default ShoppingCartPage;

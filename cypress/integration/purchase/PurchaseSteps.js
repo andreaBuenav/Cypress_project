@@ -60,6 +60,9 @@ Then('I add the phone to the cart',()=>{
 Then('The sucess message should be present',()=>{
     cartPage.verifyPurchase();
 })
+Then('The cart should be empty', () =>{
+    cartPage.verifyemptyCart();
+})
 
 
 //And
@@ -69,6 +72,9 @@ And('I select one phone',()=>{
 })
 And('I fill the credentials', ()=>{
     cartPage.fillCredentials();
+})
+And('I click delete',()=>{
+    cartPage.deleteAllItems();
 })
 
 
