@@ -41,6 +41,13 @@ When('I click the close sign up button',()=>{
     homepage.clickOnCloseSignUp();
 })
 
+When('I click on the Cart button', ()=>{
+  homepage.clickOnCarButton();
+})
+When('I click on the Home button',()=>{
+  homepage.clickOnHomeButton();
+})
+
 //All And
 And('the title is New message', () => {
   cy.get("#exampleModalLabel").should("be.visible");
@@ -57,11 +64,16 @@ And('the title is Sign up',()=>{
     cy.get('#signInModalLabel').should('be.visible');
 })
 
-And('The response code should be of {int}', (expectedStatusCode) => {
+And('The response code should be {int}', (expectedStatusCode) => {
   homepage.response(expectedStatusCode);
 });
+
+And('the button Place Order is present',()=>{
+cy.get('.btn.btn-success').should('be.visible');
+})
 
 //All Then
 Then('I should see the homepage', () => {
   cy.get("#carouselExampleIndicators").should("be.visible");
 });
+
