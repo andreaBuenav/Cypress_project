@@ -26,8 +26,10 @@ Feature: Manage Purchase Steps
         And I select one phone
         Then When I click on Phones
         And I select one phone
+
+
     @smoke
-    Scenario: finish purchase of a random phone
+    Scenario: Complete the purchase of a random phone
         Given I am in the cart page
         When I click on place order
         And I fill the credentials
