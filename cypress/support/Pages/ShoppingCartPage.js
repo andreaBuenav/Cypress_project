@@ -38,9 +38,13 @@ class ShoppingCartPage {
 
   clickOnDelete() {}
 
-  PurchaseOrder() {
+  purchaseOrder() {
     cy.get(PlaceOrder).click();
-    cy.get(OrderModal).should("be.visible");
+    
+  }
+  
+  fillCredentials(){
+    cy.get(OrderModal).wait(1000).should("be.visible");
     cy.get(NameInput).type(name);
     cy.get(CountryInput).type(country);
     cy.get(CityInput).type(city);
@@ -48,6 +52,9 @@ class ShoppingCartPage {
     cy.get(MonthInput).type(month);
     cy.get(YearInput).type(year);
     cy.get(PurchaseOrder).click();
+  }
+
+  verifyPurchase(){
     cy.get(Ok).should("be.visible").wait(2000).click();
   }
 

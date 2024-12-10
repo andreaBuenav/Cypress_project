@@ -11,7 +11,6 @@ const SignUp = "#signin2";
 const Phones = 'a#itemc[onclick="byCat(\'phone\')"]';
 const Laptops ='a#itemc[onclick="byCat(\'notebook\')"]';
 const Monitors = 'a#itemc[onclick="byCat(\'monitor\')"]';
-const CartPage = new ShoppingCartPage();
 
 //Carousel
 const Next = "span.carousel-control-next-icon";

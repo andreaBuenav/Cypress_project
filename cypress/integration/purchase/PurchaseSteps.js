@@ -13,6 +13,10 @@ import ItemPage from "../../support/Pages/ItemPage.js";
     homepage.navigateToHomePage();
   });
 
+  Given('I am in the cart page',()=>{
+      cartPage.navigateToCartPage();
+  })
+
   //When
 
   When('I click on Phones',()=>{
@@ -29,6 +33,10 @@ import ItemPage from "../../support/Pages/ItemPage.js";
         homepage.clickOnMonitors();
         cy.wait(2000);
 
+        })
+
+        When('I click on place order',()=>{
+cartPage.purchaseOrder();
         })
 
 
@@ -49,14 +57,18 @@ Then('I should only see monitors', ()=>{
 Then('I add the phone to the cart',()=>{
     itemPage.addToCart();
 })
-
-
+Then('The sucess message should be present',()=>{
+    cartPage.verifyPurchase();
+})
 
 
 //And
 
 And('I select one phone',()=>{
     homepage.selectRandomPhone();
+})
+And('I fill the credentials', ()=>{
+    cartPage.fillCredentials();
 })
 
 

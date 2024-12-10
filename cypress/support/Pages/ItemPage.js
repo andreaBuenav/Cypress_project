@@ -13,12 +13,4 @@ class ItemPage {
         cy.wait(1000);
     }
 
-    getPopUp(){
-        cy.get('button').contains('Aceptar').should('be.visible').click();
-    }
-
-  
-
-
-
 }export default ItemPage;

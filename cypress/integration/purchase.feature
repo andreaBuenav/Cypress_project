@@ -26,3 +26,9 @@ Feature: Manage Purchase Steps
         And I select one phone
         Then I add the phone to the cart
 
+        Scenario: finish purchase of a random phone
+        Given I am in the cart page
+        When I click on place order 
+        And I fill the credentials
+        Then The sucess message should be present
+
