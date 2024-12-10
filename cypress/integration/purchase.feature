@@ -34,7 +34,7 @@ Feature: Manage Purchase Steps
         Then The sucess message should be present
 
     @smoke
-    Scenario: Add a random phone to cart, and the delte it
+    Scenario: Add a random phone to cart, and the delete it
         Given I visit the homepage
         When I click on Phones
         And I select one phone
