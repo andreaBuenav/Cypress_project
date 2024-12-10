@@ -50,10 +50,10 @@ Then('I should only see monitors', ()=>{
 //And
 
 And('I select one phone',()=>{
-    homepage.selectRandomPhone();
+    homepage.selectRandomPhone().then(productId);
 })
 And('I add the phone to the cart',()=>{
-    itemPage.addToCart();
+    itemPage.addToCart(productId);
 })
 
 Then('The response code should be {int}', (expectedStatusCode)=>{

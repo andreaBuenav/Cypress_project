@@ -8,7 +8,7 @@ const AddToCart = 'a.btn.btn-success.btn-lg';
 
 class ItemPage {
 
-    addToCart(){
+    addToCart(productId){
         cy.get(AddToCart).click();
         cy.wait(1000);
         cy.url().should('eq', `https://www.demoblaze.com/prod.html?idp_=${productId}#`);

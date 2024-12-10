@@ -211,6 +211,7 @@ selectRandomPhone(){
     cy.url().should('include', `prod.html?idp_=${productId}`);
     return productId;
 });
+
 }
 
 
