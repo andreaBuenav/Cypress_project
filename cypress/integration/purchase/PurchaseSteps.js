@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
-import HomePage from "../../../support/pages/HomePage";
-import ShoppingCartPage from "../../../support/pages/ShoppingCartPage";
-import ItemPage from "../../../support/pages/ItemPage";
+import HomePage from "../../support/Pages/HomePage";
+import ShoppingCartPage from "../../support/Pages/ShoppingCartPage";
+import ItemPage from "../../support/Pages/ItemPage.js";
 
  const homepage = new HomePage();
  const cartPage = new ShoppingCartPage();

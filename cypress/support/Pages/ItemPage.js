@@ -1,5 +1,5 @@
 
-import HomePage from "../../support/Pages/HomePage";
+import HomePage from "./HomePage";
 //variables
 const homepage = new HomePage();
 //Elements
