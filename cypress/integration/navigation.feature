@@ -25,4 +25,11 @@ Feature: Manage Navigation Steps
         When I click the close button for login
         Then I should see the homepage
 
+        @smoke
+        Scenario: Navigate to Sign Up
+        When I click on the sign up button
+        And the title is Sign up
+        When I click the close sign up button
+        Then I should see the homepage
+
 

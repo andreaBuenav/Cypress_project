@@ -7,9 +7,11 @@ const SignUp = "#signin2";
 const Modal = '#logInModal'
 const ExModal = '#exampleModal'
 const videoModal = '#videoModal'
+const SignUpModal = '#signInModal'
 const CloseAboutUS ='#videoModal button.btn.btn-secondary'
 const Closelogin = '#logInModal button.btn-secondary';
 const CloseContact = '#exampleModal button.btn.btn-secondary'
+const CloseSignUp = '#signInModal button.btn.btn-secondary'
 
 class HomePage {
   navigateToHomePage() {
@@ -47,18 +49,23 @@ class HomePage {
 
   clickOnSignUpButton() {
     cy.clickAndOpen_InSameTab(SignUp);
+    cy.get(SignUpModal).should('be.visible');
   }
 
   //Closing buttons
-  clickOnCLoseButtonLogin() {
-    cy.get(Closelogin).should('be.visible').wait(5000).click();
-  }
+ 
   clickOnCloseButtonContact(){
     cy.get(ExModal).should('be.visible')
     cy.get(CloseContact).should('be.visible').wait(5000).click();
   }
   clickOncloseButtonAboutUs(){
     cy.get(CloseAboutUS).should('be.visible').wait(2000).click();
+  }
+  clickOnCLoseButtonLogin() {
+    cy.get(Closelogin).should('be.visible').wait(5000).click();
+  }
+  clickOnCloseSignUp(){
+    cy.get(CloseSignUp).should('be.visible').wait(2000).click();
   }
 
   //Get title

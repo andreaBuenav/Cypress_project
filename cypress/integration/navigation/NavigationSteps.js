@@ -23,6 +23,10 @@ When("I click the login button", () => {
   homepage.clickOnLoginButton();
 });
 
+When('I click on the sign up button',()=>{
+    homepage.clickOnSignUpButton();
+})
+
 When("I click the close button for login", () => {
   homepage.clickOnCLoseButtonLogin();
 });
@@ -33,25 +37,31 @@ When("I click the close button for contact", () => {
 When("I click on the close about us button", () => {
   homepage.clickOncloseButtonAboutUs();
 });
+When('I click the close sign up button',()=>{
+    homepage.clickOnCloseSignUp();
+})
 
 //All And
-And("the title is New message", () => {
+And('the title is New message', () => {
   cy.get("#exampleModalLabel").should("be.visible");
 });
 
-And("the title is Log in", () => {
+And('the title is Log in', () => {
   cy.get("#logInModalLabel").should("be.visible");
 });
 
-And("the title is About us", () => {
+And('the title is About us', () => {
   cy.get("#videoModalLabel").should("be.visible");
 });
+And('the title is Sign up',()=>{
+    cy.get('#signInModalLabel').should('be.visible');
+})
 
-And("The response code should be of {int}", (expectedStatusCode) => {
+And('The response code should be of {int}', (expectedStatusCode) => {
   homepage.response(expectedStatusCode);
 });
 
 //All Then
-Then("I should see the homepage", () => {
+Then('I should see the homepage', () => {
   cy.get("#carouselExampleIndicators").should("be.visible");
 });
