@@ -23,9 +23,8 @@ Feature: Manage Purchase Steps
     Scenario: purchase a random phone
         Given I visit the homepage
         When I click on Phones
-        And I select one phone
-        Then When I click on Phones
-        And I select one phone
+        Then I select one phone
+       
 
     @smoke
     Scenario: Complete the purchase of a random phone
@@ -37,8 +36,6 @@ Feature: Manage Purchase Steps
     @smoke
     Scenario: Add a random phone to cart, and the delete it
         Given I visit the homepage
-        When I click on Phones
-        And I select one phone
         When I click on Phones
         And I select one phone
         And I am in the cart page
