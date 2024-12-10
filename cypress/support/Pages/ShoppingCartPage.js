@@ -48,7 +48,7 @@ class ShoppingCartPage {
     cy.get(NameInput).type(name);
     cy.get(CountryInput).type(country);
     cy.get(CityInput).type(city);
-    cy.get(CreditCardInput).type(credit);
+    cy.get(CreditCardInput).type(String(credit));
     cy.get(MonthInput).type(month);
     cy.get(YearInput).type(year);
     cy.get(PurchaseOrder).click();
