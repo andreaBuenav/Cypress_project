@@ -32,8 +32,8 @@ class ShoppingCartPage {
   response(expectedStatusCode, url) {
     cy.intercept("GET", url).as("responseCheck");
     cy.wait("@responseCheck")
-      .its("response.statusCode")
-      .should("eq", expectedStatusCode);
+    .its("response.statusCode")
+    .should("eq", expectedStatusCode);
   }
 
   clickOnDelete() {}
@@ -50,5 +50,10 @@ class ShoppingCartPage {
     cy.get(PurchaseOrder).click();
     cy.get(Ok).should("be.visible").wait(2000).click();
   }
+
+getTitle(){
+  cy.get(Title).should('be.visible');
+}
+
 }
 export default ShoppingCartPage;

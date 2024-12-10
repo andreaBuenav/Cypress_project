@@ -70,9 +70,11 @@ class HomePage {
   }
 
   clickOnCarButton(){
+    cy.intercept("GET", "/cart.html").as("responseCheck");
     cy.get(Cart).click();
-   CartPage.navigateToCartPage();
-   
+    cy.wait("@responseCheck")
+    .its("response.statusCode")
+    .should("eq", 200); 
   }
   
   clickOnHomeButton(){

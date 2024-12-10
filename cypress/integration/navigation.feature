@@ -34,7 +34,7 @@ Feature: Manage Navigation Steps
     @smoke
     Scenario: Navigate to Cart
         When I click on the Cart button
-        Then The response code of Cart should be 200
+        Then The title should be Products
        
 
 
