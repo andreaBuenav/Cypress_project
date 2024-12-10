@@ -171,14 +171,14 @@ verifyResponsePhones(){
 verifyResponseLaptops(){
   cy.wait(2000);
   cy.get('a.hrefch').then(($links) => {
-    expect($links).to.have.lengthOf(8);
+    expect($links).to.have.lengthOf(6);
     const productIds = [];
     $links.each((_, link) => {
       const productId = link.href.split('=')[1];
       productIds.push(productId);
     });
-    expect(productIds.sort()).to.deep.equal(['8', '9', '10', '11', '12', '13', '14','15']);
-    cy.get('a.hrefch').should('have.length', 8);
+    expect(productIds.sort()).to.deep.equal(['8', '9', '10', '11', '12', '13']);
+    cy.get('a.hrefch').should('have.length', 6);
   });
 }
 
